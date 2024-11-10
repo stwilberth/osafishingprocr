@@ -23,20 +23,20 @@
         {{-- <button
             class="bg-red-500 border border-transparent hover:bg-transparent hover:border-red-500 text-white hover:text-red-500 font-semibold py-2 px-4 rounded-full w-full">Add
             to Cart</button> --}}
-<div class="flex flex-row items-center space-x-4">
-    <a href="{{ route('products.show', $product) }}"
-        class="bg-red-500 border border-transparent hover:bg-transparent hover:border-red-500 text-white hover:text-red-500 font-semibold py-2 px-4 rounded-full w-full text-center">
-        Ver
-    </a>
+        <div class="flex flex-row items-center space-x-4">
+            <a href="{{ route('products.show', $product) }}"
+                class="bg-red-500 border border-transparent hover:bg-transparent hover:border-red-500 text-white hover:text-red-500 font-semibold py-2 px-4 rounded-full w-full text-center">
+                Ver
+            </a>
 
-    <!-- button chat whatsapp -->
-    <a href="https://api.whatsapp.com/send?phone=60283248&text={{ route('products.show', $product) }} Hola,%20me%20interesa%20el%20producto%20{{ $product->name }}"
-        class="bg-green-500 border border-transparent hover:bg-transparent hover:border-green-500 text-white hover:text-green-500 font-semibold py-2 px-4 rounded-full w-full text-center">
-        Chat
-    </a>
-</div>
+            <!-- button chat whatsapp -->
+            <a href="https://api.whatsapp.com/send?phone=60283248&text={{ route('products.show', $product) }} Hola,%20me%20interesa%20el%20producto%20{{ $product->name }}"
+                class="bg-green-500 border border-transparent hover:bg-transparent hover:border-green-500 text-white hover:text-green-500 font-semibold py-2 px-4 rounded-full w-full text-center">
+                Chat
+            </a>
+        </div>
 
-        
+
         {{-- @if (Auth::check())
             <div class="mt-4">
                 <form action="{{ route('carts.store') }}" method="POST">

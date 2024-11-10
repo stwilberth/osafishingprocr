@@ -1,4 +1,8 @@
-<div>
+@extends('layouts.app')
+
+@section('content')
+
+<div class="p-5">
     <!-- People find pleasure in different ways. I find it in keeping my mind clear. - Marcus Aurelius -->
     <form action="/products/{{ $product->id }}" method="POST"
         class="max-w-lg mx-auto p-6 bg-white rounded-lg shadow-md space-y-4">
@@ -37,6 +41,11 @@
 
         <!-- Update Button -->
         <div class="flex justify-end">
+
+            <a href="{{ route('products.show', $product) }}"
+                class="mr-4 inline-flex items-center px-4 py-2 bg-gray-600 border border-transparent rounded-md font-semibold text-white hover:bg-gray-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-500">
+                Cancel
+            </a>
             <button type="submit"
                 class="inline-flex items-center px-4 py-2 bg-indigo-600 border border-transparent rounded-md font-semibold text-white hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">
                 Update Product
@@ -45,3 +54,5 @@
     </form>
 
 </div>
+
+@endsection
