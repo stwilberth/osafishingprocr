@@ -54,7 +54,7 @@
 
         <!-- Back Button -->
         <div class="flex justify-end mt-4">
-            @if(Auth::user()->hasRole('admin'))
+            @if(Auth::user() && Auth::user()->hasRole('admin'))
             <a href="{{ route('products.images.create', $product) }}"
                 class="m-2 inline-flex items-center px-4 py-2 bg-blue-600 border border-transparent rounded-md font-semibold text-white hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500">
                 Add Image

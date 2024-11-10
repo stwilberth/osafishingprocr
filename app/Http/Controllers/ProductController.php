@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Product;
 use App\Models\Category;
 use Illuminate\Http\Request;
+use Illuminate\Support\Str;
 
 class ProductController extends Controller
 {
@@ -36,7 +37,8 @@ class ProductController extends Controller
      * Store a newly created resource in storage.
      */
     public function store(Request $request)
-    {
+    {        
+        
         // Validar los datos
         $validated = $request->validate([
             'code' => 'required|unique:products,code|max:20',
@@ -46,6 +48,20 @@ class ProductController extends Controller
             'stock' => 'required|numeric|min:0',
             'categories' => 'array', // para las categorías
         ]);
+        
+        // Generate the initial slug from the name
+        $slug = Str::slug($request->input('name'));
+
+        // Check if the generated slug already exists in the database
+        $originalSlug = $slug;
+        $counter = 1;
+        while (Product::where('slug', $slug)->exists()) {
+            $slug = $originalSlug . '-' . $counter;
+            $counter++;
+        }
+
+        // Add the slug to the validated data
+        $validated['slug'] = $slug;
 
         // Crear el producto
         $product = Product::create($validated);

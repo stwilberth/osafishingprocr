@@ -1,4 +1,6 @@
-use osafishingprocr;
+-- Active: 1731211321941@@162.241.61.213@3306@apren173_osafishingprocr
+
+use apren173_osafishingprocr;
 
 -- add a new column code to the table products
 ALTER TABLE products ADD COLUMN code VARCHAR(20);
@@ -77,3 +79,38 @@ ALTER TABLE products ADD COLUMN slug VARCHAR(100) NOT NULL;
 
 -- make column slug unique
 ALTER TABLE products ADD UNIQUE (slug);
+
+use apren173_osafishingprocr;
+-- add roles to the table roles
+INSERT INTO `roles` (`id`, `name`, `guard_name`, `created_at`, `updated_at`) VALUES (1, 'admin', 'web', '2024-11-06 06:41:07', '2024-11-06 09:01:51');
+INSERT INTO `roles` (`id`, `name`, `guard_name`, `created_at`, `updated_at`) VALUES (2, 'customer', 'web', '2024-11-06 08:15:39', '2024-11-06 08:15:39');
+INSERT INTO `roles` (`id`, `name`, `guard_name`, `created_at`, `updated_at`) VALUES (3, 'Super Admin', 'web', '2024-11-06 09:02:12', '2024-11-06 09:02:12');
+INSERT INTO `roles` (`id`, `name`, `guard_name`, `created_at`, `updated_at`) VALUES (4, 'prueba', 'web', '2024-11-06 09:05:26', '2024-11-06 09:05:26');
+
+
+-- insert permissions to the table permissions
+INSERT INTO `permissions` (`id`, `name`, `guard_name`, `created_at`, `updated_at`) VALUES (1, 'manage products', 'web', '2024-11-06 06:41:40', '2024-11-06 06:41:40');
+INSERT INTO `permissions` (`id`, `name`, `guard_name`, `created_at`, `updated_at`) VALUES (2, 'manage users', 'web', '2024-11-06 06:42:00', '2024-11-06 06:42:00');
+INSERT INTO `permissions` (`id`, `name`, `guard_name`, `created_at`, `updated_at`) VALUES (3, 'manage permissions', 'web', '2024-11-06 09:02:28', '2024-11-06 09:02:28');
+INSERT INTO `permissions` (`id`, `name`, `guard_name`, `created_at`, `updated_at`) VALUES (4, 'prueba', 'web', '2024-11-06 09:05:18', '2024-11-06 09:05:18');
+
+
+-- model has roles
+INSERT INTO `model_has_roles` (`role_id`, `model_type`, `model_id`) VALUES (1, 'App\\Models\\User', 1);
+INSERT INTO `model_has_roles` (`role_id`, `model_type`, `model_id`) VALUES (3, 'App\\Models\\User', 1);
+
+-- role has permissions
+-- permission_id;role_id
+-- 1;1
+-- 2;1
+-- 1;3
+-- 2;3
+-- 3;3
+-- 3;4
+-- 4;4
+INSERT INTO `role_has_permissions` (`permission_id`, `role_id`) VALUES (1, 1);
+INSERT INTO `role_has_permissions` (`permission_id`, `role_id`) VALUES (2, 1);
+INSERT INTO `role_has_permissions` (`permission_id`, `role_id`) VALUES (1, 3);
+INSERT INTO `role_has_permissions` (`permission_id`, `role_id`) VALUES (2, 3);
+INSERT INTO `role_has_permissions` (`permission_id`, `role_id`) VALUES (3, 3);
+INSERT INTO `role_has_permissions` (`permission_id`, `role_id`) VALUES (3, 4);

@@ -107,7 +107,7 @@ class ProductImageController extends Controller
 
         // Validar la solicitud con condición
         $request->validate([
-            'img' => 'required|image|mimes:jpeg,png,jpg,webp|max:2048',
+            'img' => 'required|image|mimes:jpeg,png,jpg,webp|dimensions:min_width=960',
             'name' => 'required|string|max:50',
             'medidas_crop' => 'required|json',
             'aspect_ratio' => 'required_if:imageCount,0|in:16:9,4:3,1:1,3:2,2:3,3:4,9:16',
@@ -141,8 +141,21 @@ class ProductImageController extends Controller
             $thumb_h = $measurementsThumb['h'];
             
 
-            $img_crop = Image::read($img->getRealPath())->crop($w, $h, $x, $y)->resize($w, $h);
-            $img_thumb = Image::read($img->getRealPath())->crop($w, $h, $x, $y)->resize($thumb_w, $thumb_h);
+            // Process full-size image
+            $img_crop = Image::read($img->getRealPath())
+                ->crop((int)$crop->w, (int)$crop->h, $x, $y)
+                ->resize($measurements['w'], $measurements['h'], function ($constraint) {
+                    $constraint->aspectRatio();
+                    $constraint->upsize();
+                });
+
+            // Process thumbnail
+            $img_thumb = Image::read($img->getRealPath())
+                ->crop((int)$crop->w, (int)$crop->h, $x, $y)
+                ->resize($measurementsThumb['w'], $measurementsThumb['h'], function ($constraint) {
+                    $constraint->aspectRatio();
+                    $constraint->upsize();
+                });
 
             $img_thumb_path = 'products/thumb_'.$unique_name;
             $img_crop_path = 'products/'.$unique_name;

@@ -3,6 +3,7 @@
 namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Support\Str;
 
 class Product extends Model
 {
@@ -14,18 +15,6 @@ class Product extends Model
         'stock',
         'slug'
     ];
-
-    //create slug from product name
-    protected static function boot()
-    {
-        parent::boot();
-
-        // Evento que se ejecuta antes de guardar el modelo (crear o actualizar)
-        static::saving(function ($product) {
-            // Genera el slug a partir del nombre
-            $product->slug = Str::slug($product->name);
-        });
-    }
 
     // Indica que Laravel debe usar el campo "slug" como clave en las rutas
     public function getRouteKeyName()
