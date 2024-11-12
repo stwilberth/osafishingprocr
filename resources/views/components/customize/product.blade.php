@@ -11,11 +11,13 @@
         <a href="#" class="text-lg font-semibold mb-2">{{ $product->name }}</a>
         {{-- <p class="my-2">Women</p> --}}
         </br>
-        @foreach ($product->categories as $category)
+
+        @if ($product->category)
             <span class="bg-gray-200 text-gray-800 rounded-full px-2 py-1 text-xs font-semibold mr-1">
-                {{ $category->name }}
+                {{ $product->category->name }}
             </span>
-        @endforeach
+        @endif
+
         <div class="flex items-center mb-4">
             <span class="text-lg font-bold text-primary">₡{{ number_format($product->price, 0) }}</span>
             {{-- <span class="text-sm line-through ml-2">$24.99</span> --}}

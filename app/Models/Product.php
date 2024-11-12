@@ -13,7 +13,9 @@ class Product extends Model
         'description',
         'price',
         'stock',
-        'slug'
+        'slug',
+        'brand_id',
+        'category_id'
     ];
 
     // Indica que Laravel debe usar el campo "slug" como clave en las rutas
@@ -33,9 +35,15 @@ class Product extends Model
     }
 
     // Define the relationship with the Category model
-    public function categories()
+    public function category()
     {
-        return $this->belongsToMany(Category::class, 'products_categories');
+        return $this->belongsTo(Category::class);
+    }
+
+    //brand
+    public function brand()
+    {
+        return $this->belongsTo(Brand::class);
     }
 
 

@@ -1,6 +1,8 @@
--- Active: 1731211321941@@162.241.61.213@3306@apren173_osafishingprocr
+-- Active: 1731212519931@@127.0.0.1@3306@osafishingprocr
 
 use apren173_osafishingprocr;
+
+use osafishingprocr;
 
 -- add a new column code to the table products
 ALTER TABLE products ADD COLUMN code VARCHAR(20);
@@ -8,6 +10,9 @@ ALTER TABLE products ADD COLUMN code VARCHAR(20);
 -- do a column code unique
 ALTER TABLE products ADD UNIQUE (code);
 
+
+-- add column category_id to the table products
+ALTER TABLE products ADD COLUMN category_id INT;
 
 -- create a new table categories
 CREATE TABLE categories (
@@ -22,14 +27,9 @@ ALTER TABLE categories ADD COLUMN description VARCHAR(100);
 ALTER TABLE categories ADD COLUMN created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP;
 ALTER TABLE categories ADD COLUMN updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP;
 
--- create a new table products_categories
-CREATE TABLE products_categories (
-    product_id BIGINT UNSIGNED,
-    category_id INT,
-    PRIMARY KEY (product_id, category_id),
-    FOREIGN KEY (product_id) REFERENCES products(id),
-    FOREIGN KEY (category_id) REFERENCES categories(id)
-);
+-- change long name to 100 characters
+ALTER TABLE categories MODIFY COLUMN name VARCHAR(100);
+
 
 -- create a new table contact
 CREATE TABLE contacts (
@@ -114,3 +114,72 @@ INSERT INTO `role_has_permissions` (`permission_id`, `role_id`) VALUES (1, 3);
 INSERT INTO `role_has_permissions` (`permission_id`, `role_id`) VALUES (2, 3);
 INSERT INTO `role_has_permissions` (`permission_id`, `role_id`) VALUES (3, 3);
 INSERT INTO `role_has_permissions` (`permission_id`, `role_id`) VALUES (3, 4);
+
+
+-- create a new table brands
+CREATE TABLE brands (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    name VARCHAR(50) NOT NULL,
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
+);
+
+
+-- add column brand_id to the table products
+ALTER TABLE products ADD COLUMN brand_id INT;
+-- add foreign key brand_id to the table products
+ALTER TABLE products ADD FOREIGN KEY (brand_id) REFERENCES brands(id);
+
+-- add brands to the table brands
+-- Marine 
+-- Yo-Zuri
+-- Penn
+-- Borboleta
+-- AbuGqrcia
+-- Nelson Nacamura
+-- Rapala
+-- Daiwa
+-- Shimano
+-- Marine Sports
+
+INSERT INTO `brands` (`id`, `name`, `created_at`, `updated_at`) VALUES (1, 'Otras', '2024-11-06 09:06:00', '2024-11-06 09:06:00');
+INSERT INTO `brands` (`id`, `name`, `created_at`, `updated_at`) VALUES (2, 'Marine', '2024-11-06 09:06:00', '2024-11-06 09:06:00');
+INSERT INTO `brands` (`id`, `name`, `created_at`, `updated_at`) VALUES (3, 'Yo-Zuri', '2024-11-06 09:06:00', '2024-11-06 09:06:00');
+INSERT INTO `brands` (`id`, `name`, `created_at`, `updated_at`) VALUES (4, 'Penn', '2024-11-06 09:06:00', '2024-11-06 09:06:00');
+INSERT INTO `brands` (`id`, `name`, `created_at`, `updated_at`) VALUES (5, 'Borboleta', '2024-11-06 09:06:00', '2024-11-06 09:06:00');
+INSERT INTO `brands` (`id`, `name`, `created_at`, `updated_at`) VALUES (6, 'AbuGqrcia', '2024-11-06 09:06:00', '2024-11-06 09:06:00');
+INSERT INTO `brands` (`id`, `name`, `created_at`, `updated_at`) VALUES (7, 'Nelson Nacamura', '2024-11-06 09:06:00', '2024-11-06 09:06:00');
+INSERT INTO `brands` (`id`, `name`, `created_at`, `updated_at`) VALUES (8, 'Rapala', '2024-11-06 09:06:00', '2024-11-06 09:06:00');
+INSERT INTO `brands` (`id`, `name`, `created_at`, `updated_at`) VALUES (9, 'Daiwa', '2024-11-06 09:06:00', '2024-11-06 09:06:00');
+INSERT INTO `brands` (`id`, `name`, `created_at`, `updated_at`) VALUES (10, 'Shimano', '2024-11-06 09:06:00', '2024-11-06 09:06:00');
+INSERT INTO `brands` (`id`, `name`, `created_at`, `updated_at`) VALUES (11, 'Marine Sports', '2024-11-06 09:06:00', '2024-11-06 09:06:00');
+
+-- add categories to the table categories
+-- Cañas de Sipining 
+-- Cañas de Baitcasting 
+-- Carretes de Spining 
+-- Carretes de Baitcasting 
+-- Señuelos
+-- Accesorios
+-- Ropa
+-- Combos
+-- Bolsos
+-- Lineas
+-- Anzuelos
+-- Cajas
+-- Otros
+
+INSERT INTO `categories` (`id`, `name`, `description`, `created_at`, `updated_at`) VALUES (1, 'Cañas de Sipining', 'Cañas de Sipining', '2024-11-06 09:06:00', '2024-11-06 09:06:00');
+INSERT INTO `categories` (`id`, `name`, `description`, `created_at`, `updated_at`) VALUES (2, 'Cañas de Baitcasting', 'Cañas de Baitcasting', '2024-11-06 09:06:00', '2024-11-06 09:06:00');
+INSERT INTO `categories` (`id`, `name`, `description`, `created_at`, `updated_at`) VALUES (3, 'Carretes de Spining', 'Carretes de Spining', '2024-11-06 09:06:00', '2024-11-06 09:06:00');
+INSERT INTO `categories` (`id`, `name`, `description`, `created_at`, `updated_at`) VALUES (4, 'Carretes de Baitcasting', 'Carretes de Baitcasting', '2024-11-06 09:06:00', '2024-11-06 09:06:00');
+INSERT INTO `categories` (`id`, `name`, `description`, `created_at`, `updated_at`) VALUES (5, 'Señuelos', 'Señuelos', '2024-11-06 09:06:00', '2024-11-06 09:06:00');
+INSERT INTO `categories` (`id`, `name`, `description`, `created_at`, `updated_at`) VALUES (6, 'Accesorios', 'Accesorios', '2024-11-06 09:06:00', '2024-11-06 09:06:00');
+INSERT INTO `categories` (`id`, `name`, `description`, `created_at`, `updated_at`) VALUES (7, 'Ropa', 'Ropa', '2024-11-06 09:06:00', '2024-11-06 09:06:00');
+INSERT INTO `categories` (`id`, `name`, `description`, `created_at`, `updated_at`) VALUES (8, 'Combos', 'Combos', '2024-11-06 09:06:00', '2024-11-06 09:06:00');
+INSERT INTO `categories` (`id`, `name`, `description`, `created_at`, `updated_at`) VALUES (9, 'Bolsos', 'Bolsos', '2024-11-06 09:06:00', '2024-11-06 09:06:00');
+INSERT INTO `categories` (`id`, `name`, `description`, `created_at`, `updated_at`) VALUES (10, 'Lineas', 'Lineas', '2024-11-06 09:06:00', '2024-11-06 09:06:00');
+INSERT INTO `categories` (`id`, `name`, `description`, `created_at`, `updated_at`) VALUES (11, 'Anzuelos', 'Anzuelos', '2024-11-06 09:06:00', '2024-11-06 09:06:00');
+INSERT INTO `categories` (`id`, `name`, `description`, `created_at`, `updated_at`) VALUES (12, 'Cajas', 'Cajas', '2024-11-06 09:06:00', '2024-11-06 09:06:00');
+INSERT INTO `categories` (`id`, `name`, `description`, `created_at`, `updated_at`) VALUES (13, 'Otros', 'Otros', '2024-11-06 09:06:00', '2024-11-06 09:06:00');
+

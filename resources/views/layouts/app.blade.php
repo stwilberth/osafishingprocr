@@ -5,8 +5,18 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="csrf-token" content="{{ csrf_token() }}">
+    <!-- tags for sharing social media -->
+    @hasSection('meta')
+        @yield('meta')
+    @else
+        <x-customize.meta-tags 
+            title="{{ config('app.name', 'OsaFishingProCR.com') }}" 
+            description="Tienda de pesca en Costa Rica"
+            image="{{ asset('images/osa_transparent_circle.png') }}" />
+    @endif
+    <meta property="og:url" content="{{ url()->current() }}" />
 
-    <title>{{ config('app.name', 'Laravel') }}</title>
+
 
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.bunny.net">
