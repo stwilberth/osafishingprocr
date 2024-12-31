@@ -54,6 +54,14 @@
                         <a href="{{ route('permissions.index') }}" class="text-blue-500">View Permissions</a>
                     </div>
                 </div>
+                {{-- manage brands --}}
+                <div class="bg-white overflow-hidden shadow-sm sm:rounded-lg">
+                    <div class="p-6 text-gray-900">
+                        <h1 class="text-2xl font-bold">Brands</h1>
+                        <p class="text-lg">Manage brands</p>
+                        <a href="{{ route('brands.index') }}" class="text-blue-500">View Brands</a>
+                    </div>
+                </div>
             </div>
         </div>
     </div>

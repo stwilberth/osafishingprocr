@@ -7,36 +7,35 @@ use App\Models\Category;
 use App\Models\Brand;
 use Illuminate\Http\Request;
 use Illuminate\Support\Str;
+use Illuminate\Support\Facades\Storage;
 
 class ProductController extends Controller
 {
     /**
      * Display a listing of the resource.
      */
-    public function index()
+    public function index(Request $request)
     {
-        // if ($request->has('category_id')) {
-        //     $products = $products->where('category_id', $request->input('category_id'));
-        // }
-    
-        // if ($request->has('brand_id')) {
-        //     $products = $products->where('brand_id', $request->input('brand_id'));
-        // }
-    
-        // // Return the products with a view
-        // return view('products.index', compact('products', 'categories', 'brands'));
+        
+        $brand = $request->input('brand');
+        $category = $request->input('category');
 
-        // Get all products
-        $products = Product::all();
+        if($brand && $category) {
+            $products = Product::where('brand_id', $brand)
+            ->where('category_id', $category)->get();
+        } else if($brand) {
+            $products = Product::where('brand_id', $brand)->get();
+        } else if($category) {
+            $products = Product::where('category_id', $category)->get();
+        } else {
+            $products = Product::all();
+        }
 
-        //categories
-        $categories = Category::all();
-
-        //brands
-        $brands = Brand::all();
+        $categories = Category::has('products')->get();
+        $brands = Brand::has('products')->get();
 
         // Return the products with a view
-        return view('products.index', compact('products'));
+        return view('products.index', compact('products', 'categories', 'brands'));
     }
     // Filter products by category and brand
 
@@ -145,16 +144,15 @@ class ProductController extends Controller
      */
     public function destroy(Product $product)
     {
-        //delete the product
-        $product->delete();
 
         //delete the product images from the storage
         foreach ($product->images as $image) {
             Storage::delete($image->path);
         }
-
+        
         //delete the product images
         $product->images()->delete();
+        $product->delete();
 
         //redirect to the products index
         return redirect()->route('products.index');

@@ -111,18 +111,13 @@
         <!-- Responsive Settings Options for Mobile -->
         <div class="pt-4 pb-1 border-t border-gray-200">
             @if (Auth::check())
-                <div class="px-4">
-                    <div class="font-medium text-base text-gray-800">{{ Auth::user()->name }}</div>
-                    <div class="font-medium text-sm text-gray-500">{{ Auth::user()->email }}</div>
-                </div>
+                <x-responsive-nav-link :href="route('profile.edit')">
+                    {{ Auth::user()->name }}
+                </x-responsive-nav-link>
             @endif
 
             <div class="mt-3 space-y-1">
                 @if (Auth::check())
-                    <x-responsive-nav-link :href="route('profile.edit')">
-                        {{ __('Profile') }}
-                    </x-responsive-nav-link>
-
                     <!-- Authentication -->
                     <form method="POST" action="{{ route('logout') }}">
                         @csrf

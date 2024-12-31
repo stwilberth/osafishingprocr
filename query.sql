@@ -1,4 +1,4 @@
--- Active: 1731212519931@@127.0.0.1@3306@osafishingprocr
+-- Active: 1731211321941@@162.241.61.213@3306@apren173_osafishingprocr
 
 use apren173_osafishingprocr;
 
@@ -182,4 +182,20 @@ INSERT INTO `categories` (`id`, `name`, `description`, `created_at`, `updated_at
 INSERT INTO `categories` (`id`, `name`, `description`, `created_at`, `updated_at`) VALUES (11, 'Anzuelos', 'Anzuelos', '2024-11-06 09:06:00', '2024-11-06 09:06:00');
 INSERT INTO `categories` (`id`, `name`, `description`, `created_at`, `updated_at`) VALUES (12, 'Cajas', 'Cajas', '2024-11-06 09:06:00', '2024-11-06 09:06:00');
 INSERT INTO `categories` (`id`, `name`, `description`, `created_at`, `updated_at`) VALUES (13, 'Otros', 'Otros', '2024-11-06 09:06:00', '2024-11-06 09:06:00');
+
+
+/* Sunshine 
+Noeby
+Rio Mar
+Tico Lure 
+MirrowLure 
+7Fishing */
+
+-- add brands to the table brands
+INSERT INTO `brands` (`id`, `name`, `created_at`, `updated_at`) VALUES (12, 'Sunshine', '2024-11-06 09:06:00', '2024-11-06 09:06:00');
+INSERT INTO `brands` (`id`, `name`, `created_at`, `updated_at`) VALUES (13, 'Noeby', '2024-11-06 09:06:00', '2024-11-06 09:06:00');
+INSERT INTO `brands` (`id`, `name`, `created_at`, `updated_at`) VALUES (14, 'Rio Mar', '2024-11-06 09:06:00', '2024-11-06 09:06:00');
+INSERT INTO `brands` (`id`, `name`, `created_at`, `updated_at`) VALUES (15, 'Tico Lure', '2024-11-06 09:06:00', '2024-11-06 09:06:00');
+INSERT INTO `brands` (`id`, `name`, `created_at`, `updated_at`) VALUES (16, 'MirrowLure', '2024-11-06 09:06:00', '2024-11-06 09:06:00');
+INSERT INTO `brands` (`id`, `name`, `created_at`, `updated_at`) VALUES (17, '7Fishing', '2024-11-06 09:06:00', '2024-11-06 09:06:00');
 

@@ -41,6 +41,13 @@
         </div>
         @endif
     </form>
+
+    {{-- button to go back to the categories index --}}
+    <div class="flex justify-center mt-4">
+        <a href="{{ route('categories.index') }}" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">
+            Categories
+        </a>
+    </div>
 </div>
 
 @endsection

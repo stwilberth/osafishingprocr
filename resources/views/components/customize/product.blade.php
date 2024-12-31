@@ -1,12 +1,12 @@
 <!-- Product 1 -->
-<div class="w-full sm:w-1/2 lg:w-1/4 px-4 mb-8">
+<div class="col-span-1 px-4 mb-8">
     <div class="bg-white p-3 rounded-lg shadow-lg">
         {{-- {{ asset('storage/' . $image->path) }} --}}
         @if ($product->images->count() > 0)
             <img src="{{ asset('storage/' . $product->images->first()->path) }}"
                 alt="{{ $product->images->first()->name }}" class="w-full object-cover mb-4 rounded-lg">
         @else
-            <img src="{{ asset('images/no_image.jpg') }}" alt="Placeholder" class="w-full object-cover mb-4 rounded-lg">
+            <img src="{{ asset('images/osa_transparent_circle.png') }}" alt="Placeholder" class="w-full object-cover mb-4 rounded-lg">
         @endif
         <a href="#" class="text-lg font-semibold mb-2">{{ $product->name }}</a>
         {{-- <p class="my-2">Women</p> --}}

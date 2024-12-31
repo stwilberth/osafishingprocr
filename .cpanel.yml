@@ -1,0 +1,5 @@
+---
+deployment:
+  tasks:
+    - export DEPLOYPATH=/home3/apren173/osafishingprocr.com/
+    - /bin/cp -R app bootstrap config database public resources routes
