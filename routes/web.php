@@ -10,6 +10,8 @@ use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\PageController;
 use App\Http\Controllers\ContactController;
 use App\Http\Controllers\ProductImageController;
+use App\Http\Controllers\BrandController;
+
 
 //pages
 Route::get('/', [PageController::class, 'index'])->name('pages.index');
@@ -84,6 +86,9 @@ Route::prefix('dashboard/roles')->middleware(['auth', 'role:admin'])->name('role
     Route::put('/{role}/sync', [PermissionController::class, 'syncRole'])->name('sync');
 });
 
+//brands into the dashboard
+Route::middleware(['auth', 'role:admin'])->resource('brands', BrandController::class);
+
 //routes for users
 Route::prefix('users')->name('users.')->group(function () {
     // Index - List all users
@@ -109,7 +114,7 @@ Route::prefix('users')->name('users.')->group(function () {
 
     //sync roles edit
     Route::get('/{user}/sync_roles', [UserController::class, 'syncRolesEdit'])->name('sync_roles_edit');
-    
+
     // Attach role to a user
     Route::put('/{user}/sync_roles', [UserController::class, 'syncRolesUpdate'])->name('sync_roles_update');
 });
@@ -123,6 +128,38 @@ Route::middleware(['auth', 'role:admin'])->group(function () {
     Route::post('products/{product}/images', [ProductImageController::class, 'store'])->name('products.images.store');
     Route::delete('products/images/{image}', [ProductImageController::class, 'destroy'])->name('products.images.destroy');
 });
+
+//delete cache
+Route::get('/clear-cache', function () {
+    Artisan::call('cache:clear');
+    Artisan::call('view:clear');
+    Artisan::call('route:clear');
+    Artisan::call('config:clear');
+    Artisan::call('optimize:clear');
+    return redirect()->back()->with('success', 'Cache cleared successfully');
+})->middleware(['auth', 'role:admin'])->name('clear-cache');
+
+//create link symbolic
+//php artisan storage:link
+// Route::get('/create_link', function () {
+//     // Ruta absoluta al directorio 'storage/app/public'
+//     $target = storage_path('app/public');
+
+//     // Ruta absoluta al enlace simbólico (public/storage)
+//     $link = public_path('storage');
+
+//     // Verificar si la carpeta de destino existe antes de intentar crear el enlace simbólico
+//     if (!file_exists($link)) {
+//         if (symlink($target, $link)) {
+//             return "Enlace simbólico creado correctamente.";
+//         } else {
+//             return "Error al crear el enlace simbólico.";
+//         }
+//     } else {
+//         return "El enlace simbólico ya existe.";
+//     }
+// });
+
 
 
 

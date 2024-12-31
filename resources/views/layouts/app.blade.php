@@ -2,15 +2,25 @@
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
 
 <head>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-MQXY01X6RM"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+
+        gtag('config', 'G-MQXY01X6RM');
+    </script>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="csrf-token" content="{{ csrf_token() }}">
+    <link rel="icon" href="{{ asset('images/favicon.ico') }}" type="image/ico">
     <!-- tags for sharing social media -->
     @hasSection('meta')
         @yield('meta')
     @else
-        <x-customize.meta-tags 
-            title="{{ config('app.name', 'OsaFishingProCR.com') }}" 
+        <x-customize.meta-tags
+            title="{{ config('app.name', 'OsaFishingProCR.com') }}"
             description="Tienda de pesca en Costa Rica"
             image="{{ asset('images/osa_transparent_circle.png') }}" />
     @endif
@@ -21,10 +31,13 @@
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.bunny.net">
     <link href="https://fonts.bunny.net/css?family=figtree:400,500,600&display=swap" rel="stylesheet" />
+    <!-- icons awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
     @yield('styles')
 
-    <!-- Scripts -->
-    @vite(['resources/css/app.css', 'resources/js/app.js'])
+    <!-- production -->
+    @vite(['resources/css/app.css'])
+
 </head>
 
 <body class="font-sans antialiased">
@@ -51,6 +64,7 @@
             @yield('scripts')
         </main>
     </div>
+        @vite(['resources/js/app.js'])
 </body>
 
 </html>

@@ -102,6 +102,11 @@ class CategoryController extends Controller
         //get the category
         $category = Category::findOrFail($id);
 
+        //verify that the category dont have products
+        if ($category->products->count() > 0) {
+            return redirect()->route('categories.index')->with('error', 'Category has products');
+        }
+
         //delete the category
         $category->delete();
 
