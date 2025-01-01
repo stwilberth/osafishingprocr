@@ -36,7 +36,12 @@
     @yield('styles')
 
     <!-- production -->
-    @vite(['resources/css/app.css'])
+    @if (app()->environment('production'))
+        <script src="{{ asset('build/assets/app.js') }}" type="module" defer></script>
+        <link href="{{ asset('build/assets/app.css') }}" rel="stylesheet">
+    @else
+        @vite(['resources/css/app.css'])
+    @endif
 
 </head>
 
