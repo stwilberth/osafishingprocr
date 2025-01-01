@@ -11,4 +11,12 @@ export default defineConfig({
             refresh: true,
         }),
     ],
+    build: {
+        manifest: true,
+        rollupOptions: {
+            input: {
+                main: './resources/js/app.js',
+            },
+        },
+    },
 });

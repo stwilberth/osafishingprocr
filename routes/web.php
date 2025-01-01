@@ -135,7 +135,8 @@ Route::get('/clear-cache', function () {
     Artisan::call('view:clear');
     Artisan::call('route:clear');
     Artisan::call('config:clear');
-    Artisan::call('optimize:clear');
+    Artisan::call('config:cache');
+    Artisan::call('optimize');
     return redirect()->back()->with('success', 'Cache cleared successfully');
 })->middleware(['auth', 'role:admin'])->name('clear-cache');
 
