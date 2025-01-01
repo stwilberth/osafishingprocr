@@ -9,8 +9,8 @@
     @hasSection('meta')
         @yield('meta')
     @else
-        <x-customize.meta-tags 
-            title="{{ config('app.name', 'OsaFishingProCR.com') }}" 
+        <x-customize.meta-tags
+            title="{{ config('app.name', 'OsaFishingProCR.com') }}"
             description="Tienda de pesca en Costa Rica"
             image="{{ asset('images/osa_transparent_circle.png') }}" />
     @endif
@@ -23,13 +23,8 @@
     <link href="https://fonts.bunny.net/css?family=figtree:400,500,600&display=swap" rel="stylesheet" />
     @yield('styles')
 
-    <!-- production -->
-    @if (app()->environment('production'))
-        <script src="{{ asset('build/assets/app.js') }}" type="module" defer></script>
-        <link href="{{ asset('build/assets/app.css') }}" rel="stylesheet">
-    @else
-        @vite(['resources/css/app.css', 'resources/js/app.js'])
-    @endif
+
+    @vite(['resources/css/app.css', 'resources/js/app.js'])
 </head>
 
 <body class="font-sans text-gray-900 antialiased">
