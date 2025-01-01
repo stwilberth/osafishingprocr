@@ -137,7 +137,7 @@ Route::get('/clear-cache', function () {
     Artisan::call('config:clear');
     Artisan::call('config:cache');
     Artisan::call('optimize');
-    return redirect()->back()->with('success', 'Cache cleared successfully');
+    return redirect()->route('dashboard')->with('success', 'Cache cleared successfully');
 })->middleware(['auth', 'role:admin'])->name('clear-cache');
 
 //create link symbolic
