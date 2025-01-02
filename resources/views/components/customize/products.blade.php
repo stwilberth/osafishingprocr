@@ -9,13 +9,17 @@
                 <div class="bg-white p-3 md:p-4 rounded-lg shadow-lg hover:shadow-xl transition-shadow duration-300">
                     <div class="aspect-w-1 aspect-h-1 mb-3">
                         @if ($product->images->count() > 0)
-                            <img src="{{ asset('storage/' . $product->images->first()->path) }}"
-                                alt="{{ $product->images->first()->name }}"
-                                class="w-full h-32 md:h-48 object-contain rounded-lg">
+                            <a href="{{ route('products.show', $product) }}">
+                                <img src="{{ asset('storage/' . $product->images->first()->path) }}"
+                                    alt="{{ $product->images->first()->name }}"
+                                    class="w-full h-32 md:h-48 object-contain rounded-lg">
+                            </a>
                         @else
-                            <img src="{{ asset('images/osa_transparent_circle.png') }}"
-                                alt="Placeholder"
-                                class="w-full h-32 md:h-48 object-contain rounded-lg">
+                            <a href="{{ route('products.show', $product) }}">
+                                <img src="{{ asset('images/osa_transparent_circle.png') }}"
+                                    alt="Placeholder"
+                                    class="w-full h-32 md:h-48 object-contain rounded-lg">
+                            </a>
                         @endif
                     </div>
 
