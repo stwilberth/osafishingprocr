@@ -7,18 +7,14 @@
         <!-- Bienvenido -->
         <div class="w-5/6 mx-auto">
             <div class="bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4">
-                <h1 class="text-2xl font-bold mb-4">¡Bienvenido a Osa Fishing Pro CR!</h1>
+                <h1 class="text-2xl font-bold mb-4 text-red-800">¡Bienvenido a Osa Fishing Pro CR!</h1>
                 <p class="text-gray-700 text-base">
                     Hola, bienvenido a la tienda en línea. Aquí encontrarás una gran variedad de productos para la
                     pesca.
                 </p>
                 <p class="text-gray-700 text-base mt-4">
-                    Si tienes alguna duda, puedes contactarnos por medio de nuestro chat de WhatsApp.
-                </p>
-
-                <p class="text-gray-700 text-base mt-4">
-                    El sitio web está en construcción, por lo que es posible que encuentres errores. Si es así, por
-                    favor avísanos.
+                    Si tienes alguna duda, puedes contactarnos por medio de nuestro <a href="https://wa.me/60283248" target="_blank" class="text-green-500">chat de WhatsApp</a> o llamarnos al
+                    teléfono <a href="tel:60283248" class="text-blue-500">6028-3248</a>.
                 </p>
             </div>
         </div>
@@ -27,7 +23,7 @@
 
         <!-- Categorías más populares -->
         <div class="w-5/6 mx-auto py-10">
-            <h1 class="text-3xl font-bold text-gray-800 mb-8 text-center">Categorías más populares</h1>
+            <h1 class="text-2xl font-bold text-gray-800 mb-4 text-center">Categorías más populares</h1>
             <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
                 <!-- Card 1 -->
                 <div
@@ -59,7 +55,7 @@
 
 
         <div class="w-5/6 mx-auto py-10">
-            <h1 class="text-2xl font-bold mb-4">Productos destacados</h1>
+            <h1 class="text-2xl font-bold mb-4 text-center">Productos destacados</h1>
             <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
                 <!-- Card 1 -->
                 @foreach ($products as $product)

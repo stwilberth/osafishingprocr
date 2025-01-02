@@ -6,7 +6,10 @@
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-MQXY01X6RM"></script>
     <script>
         window.dataLayer = window.dataLayer || [];
-        function gtag(){dataLayer.push(arguments);}
+
+        function gtag() {
+            dataLayer.push(arguments);
+        }
         gtag('js', new Date());
 
         gtag('config', 'G-MQXY01X6RM');
@@ -19,10 +22,8 @@
     @hasSection('meta')
         @yield('meta')
     @else
-        <x-customize.meta-tags
-            title="{{ config('app.name', 'OsaFishingProCR.com') }}"
-            description="Tienda de pesca en Costa Rica"
-            image="{{ asset('images/osa_transparent_circle.png') }}" />
+        <x-customize.meta-tags title="{{ config('app.name', 'OsaFishingProCR.com') }}"
+            description="Tienda de pesca en Costa Rica" image="{{ asset('images/osa_transparent_circle.png') }}" />
     @endif
     <meta property="og:url" content="{{ url()->current() }}" />
 
@@ -40,7 +41,7 @@
         <script src="{{ asset('build/assets/app1_1.js') }}" type="module" defer></script>
         <link href="{{ asset('build/assets/app1_1.css') }}" rel="stylesheet">
     @else
-        @vite(['resources/css/app.css'])
+        @vite(['resources/css/app.css', 'resources/js/app.js'])
     @endif
 
 
@@ -116,20 +117,27 @@
 
                 <!-- Enlaces sociales -->
                 <div class="flex gap-4">
-                    <a href="#" class="text-blue-500 hover:text-blue-700 transition-colors">
-                        <i class="fab fa-facebook text-xl"></i>
-                    </a>
-                    <a href="#" class="text-blue-400 hover:text-blue-600 transition-colors">
-                        <i class="fab fa-instagram text-xl"></i>
-                    </a>
-                    <a href="#" class="text-green-500 hover:text-green-700 transition-colors">
-                        <i class="fab fa-whatsapp text-xl"></i>
-                    </a>
+                    <!-- whatsapp -->
+                    <a href="https://wa.me/60283248" target="_blank" class="text-green-500"><i class="fab fa-whatsapp"></i></a>
+                    <!-- phone -->
+                    <a href="tel:60283248" class="text-blue-500"><i class="fas fa-phone "></i></a>
+                    <!-- facebook -->
+                    <a href="https://www.facebook.com/osafishingpro" target="_blank" class="text-blue-500"><i class="fab fa-facebook"></i></a>
+                    <!-- instagram -->
+                    <a href="https://www.instagram.com/osafishingpro" target="_blank" class="text-purple-500"><i class="fab fa-instagram"></i></a>
+                    <!-- twitter -->
+                    <a href="https://www.twitter.com/osafishingpro" target="_blank" class="text-blue-500"><i class="fab fa-twitter"></i></a>
+                    <!-- youtube -->
+                    <a href="https://www.youtube.com/osafishingpro" target="_blank" class="text-red-500"><i class="fab fa-youtube"></i></a>
+                    <!-- tiktok -->
+                    <a href="https://www.tiktok.com/osafishingpro" target="_blank" class="text-pink-500"><i class="fab fa-tiktok"></i></a>
+                    <!-- google maps -->
+                    <a href="https://maps.app.goo.gl/xJLTmmg2NLbKyf658" target="_blank" class="text-green-500"><i class="fas fa-map-marker-alt"></i></a>
                 </div>
             </div>
 
             <!-- Decoración marina minimalista -->
-            <div class="relative h-1 w-full mt-4 mb-2">
+            <div class="relative h-1 w-full mt-4">
                 <div class="absolute inset-0 bg-blue-200 opacity-50">
                     <svg class="w-full h-full" preserveAspectRatio="none" viewBox="0 0 1200 6" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <path d="M0 3C300 3 300 1 600 1C900 1 900 5 1200 5" stroke="currentColor" stroke-width="2" pathLength="1"/>
@@ -138,7 +146,7 @@
             </div>
 
             <!-- Créditos del desarrollador -->
-            <div class="text-center text-lg text-gray-500 mt-2">
+            <div class="text-center text-lg text-gray-500 mt-10 mb-5">
                 Desarrollado por <a href="https://wilberth.com" class="text-blue-500 hover:text-blue-700 transition-colors" target="_blank">Wilberth.com</a>
             </div>
         </div>
