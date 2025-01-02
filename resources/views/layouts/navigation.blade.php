@@ -1,4 +1,4 @@
-<nav x-data="{ open: false }" class="bg-blue-900 border-b border-blue-100">
+<nav x-data="{ open: false }" class="bg-[#1b4553] border-b border-blue-100">
     <!-- Primary Navigation Menu -->
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div class="flex justify-between h-16">
@@ -18,17 +18,23 @@
                             {{ __('Dashboard') }}
                         </x-nav-link>
                     @endif
+
+                    <!-- home -->
+                    <x-nav-link :href="route('pages.index')" :active="request()->routeIs('pages.index')">
+                        Inicio
+                    </x-nav-link>
+
                     <!-- products -->
                     <x-nav-link :href="route('products.index')" :active="request()->routeIs('products.index')">
-                        {{ __('Products') }}
+                        Productos
                     </x-nav-link>
                     <!-- about -->
                     <x-nav-link :href="route('pages.about')" :active="request()->routeIs('pages.about')">
-                        {{ __('About') }}
+                        Nosotros
                     </x-nav-link>
                     <!-- contact -->
                     <x-nav-link :href="route('contacts.create')" :active="request()->routeIs('contacts.create')">
-                        {{ __('Contact') }}
+                        Contacto
                     </x-nav-link>
                 </div>
             </div>

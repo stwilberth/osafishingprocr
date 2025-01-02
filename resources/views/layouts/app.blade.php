@@ -43,6 +43,31 @@
         @vite(['resources/css/app.css'])
     @endif
 
+
+
+    <style>
+        /* Mantener el estilo existente del botón WhatsApp */
+        .whatsapp-btn {
+            animation: pulse 2s infinite;
+            box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.7);
+            z-index: 1000;
+        }
+
+        @keyframes pulse {
+            0% {
+                box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.7);
+            }
+
+            70% {
+                box-shadow: 0 0 0 20px rgba(37, 211, 102, 0);
+            }
+
+            100% {
+                box-shadow: 0 0 0 0 rgba(37, 211, 102, 0);
+            }
+        }
+    </style>
+
 </head>
 
 <body class="font-sans antialiased">
@@ -69,7 +94,57 @@
             @yield('scripts')
         </main>
     </div>
-        @vite(['resources/js/app.js'])
+
+    <!-- Botón flotante de WhatsApp -->
+    <a href="https://api.whatsapp.com/send?phone=60283248&text="
+        class="fixed bottom-5 right-5 flex items-center justify-center w-[60px] h-[60px] text-3xl bg-green-500 hover:bg-green-600 text-white rounded-full whatsapp-btn"
+        target="_blank">
+        <i class="fab fa-whatsapp"></i>
+    </a>
+    @vite(['resources/js/app.js'])
+
+    {{-- footer --}}
+    <footer class="bg-gradient-to-b from-blue-50 to-blue-100 border-t border-blue-200">
+        <div class="max-w-7xl mx-auto px-4 py-6">
+            <div class="flex flex-col md:flex-row justify-between items-center gap-4">
+                <!-- Logo y copyright -->
+                <div class="flex items-center gap-2">
+                    <img src="{{ asset('images/osa_transparent_circle.png') }}" alt="Logo" class="w-10 h-10">
+                    <p class="text-gray-600 text-sm">
+                        © {{ date('Y') }} Osa Fishing Pro CR.
+                        <span class="block md:inline">Todos los derechos reservados.</span>
+                    </p>
+                </div>
+
+                <!-- Enlaces sociales -->
+                <div class="flex gap-4">
+                    <a href="#" class="text-blue-500 hover:text-blue-700 transition-colors">
+                        <i class="fab fa-facebook text-xl"></i>
+                    </a>
+                    <a href="#" class="text-blue-400 hover:text-blue-600 transition-colors">
+                        <i class="fab fa-instagram text-xl"></i>
+                    </a>
+                    <a href="#" class="text-green-500 hover:text-green-700 transition-colors">
+                        <i class="fab fa-whatsapp text-xl"></i>
+                    </a>
+                </div>
+            </div>
+
+            <!-- Decoración marina minimalista -->
+            <div class="relative h-1 w-full mt-4 mb-2">
+                <div class="absolute inset-0 bg-blue-200 opacity-50">
+                    <svg class="w-full h-full" preserveAspectRatio="none" viewBox="0 0 1200 6" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M0 3C300 3 300 1 600 1C900 1 900 5 1200 5" stroke="currentColor" stroke-width="2" pathLength="1"/>
+                    </svg>
+                </div>
+            </div>
+
+            <!-- Créditos del desarrollador -->
+            <div class="text-center text-lg text-gray-500 mt-2">
+                Desarrollado por <a href="https://wilberth.com" class="text-blue-500 hover:text-blue-700 transition-colors" target="_blank">Wilberth.com</a>
+            </div>
+        </div>
+    </footer>
 </body>
 
 </html>

@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\Product;
 
 class PageController extends Controller
 {
@@ -10,7 +11,8 @@ class PageController extends Controller
     //home page
     public function index()
     {
-        return view('pages.index');
+        $products = Product::limit(4)->get();
+        return view('pages.index', compact('products'));
     }
 
     //about page
