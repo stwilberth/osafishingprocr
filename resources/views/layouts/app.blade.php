@@ -37,8 +37,8 @@
 
     <!-- production -->
     @if (app()->environment('production'))
-        <script src="{{ asset('build/assets/app.js') }}" type="module" defer></script>
-        <link href="{{ asset('build/assets/app.css') }}" rel="stylesheet">
+        <script src="{{ asset('build/assets/app1_1.js') }}" type="module" defer></script>
+        <link href="{{ asset('build/assets/app1_1.css') }}" rel="stylesheet">
     @else
         @vite(['resources/css/app.css'])
     @endif
@@ -101,8 +101,6 @@
         target="_blank">
         <i class="fab fa-whatsapp"></i>
     </a>
-    @vite(['resources/js/app.js'])
-
     {{-- footer --}}
     <footer class="bg-gradient-to-b from-blue-50 to-blue-100 border-t border-blue-200">
         <div class="max-w-7xl mx-auto px-4 py-6">

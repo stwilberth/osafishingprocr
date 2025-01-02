@@ -67,7 +67,7 @@
                         <a href="/products/{{ $product->id }}">
                             <div class="mb-4">
                                 @if ($product->images->first())
-                                    <img src="{{ $product->images->first()->url }}" alt="{{ $product->name }}"
+                                    <img src="{{ asset('storage/' . $product->images->first()->path) }}" alt="{{ $product->name }}"
                                         class="w-full h-48 object-cover mb-4">
                                 @else
                                     <img src="{{ asset('images/osa_transparent_circle.png') }}" alt="{{ $product->name }}"

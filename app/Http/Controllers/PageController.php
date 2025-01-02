@@ -11,7 +11,7 @@ class PageController extends Controller
     //home page
     public function index()
     {
-        $products = Product::limit(4)->get();
+        $products = Product::limit(3)->get();
         return view('pages.index', compact('products'));
     }
 
