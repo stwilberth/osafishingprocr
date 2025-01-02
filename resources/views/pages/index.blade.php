@@ -1,5 +1,26 @@
 @extends('layouts.app')
 
+@section('meta')
+    <meta name="description" content="Tienda de pesca en Costa Rica, Cañas, Carretes y Señuelos | Osa Fishing Pro">
+    <meta name="keywords" content="Pesca, Costa Rica, Cañas, Carretes, Señuelos, Osa Fishing Pro">
+    <meta name="author" content="Osa Fishing Pro">
+    <meta name="robots" content="index, follow">
+    <meta name="googlebot" content="index, follow">
+    <meta name="twitter-card" content="summary_large_image">
+    <meta name="twitter-domain" content="osafishingpro.com">
+    <meta name="twitter-image" content="{{ asset('images/osa_transparent_circle.png') }}">
+    <meta name="twitter-title" content="Osa Fishing Pro CR | Tienda de pesca en Costa Rica">
+    <meta name="twitter-description" content="Tienda de pesca en Costa Rica, Cañas, Carretes y Señuelos | Osa Fishing Pro">
+    <meta name="og:image" content="{{ asset('images/osa_transparent_circle.png') }}">
+    <meta name="og:title" content="Osa Fishing Pro CR | Tienda de pesca en Costa Rica">
+    <meta name="og:description" content="Tienda de pesca en Costa Rica, Cañas, Carretes y Señuelos">
+    <meta name="og:url" content="{{ url()->current() }}">
+    <meta name="og:type" content="website">
+    <meta name="og:locale" content="es_CR">
+    <meta name="og:site_name" content="Osa Fishing Pro CR">
+    <title>Osa Fishing Pro CR | Tienda de pesca en Costa Rica</title>
+@endsection
+
 @section('content')
     <!-- home -->
     <div class="container mx-auto mt-5">

@@ -10,8 +10,29 @@
 @endphp
 
 @section('meta')
-    <x-customize.meta-tags title="{{ $product->name }}" description="{{ $product->description }}"
-        image="{{ $image }}" />
+    <meta name="description" content="{{ $product->description }}">
+    <meta name="keywords" content="{{ $product->name }}">
+    <meta name="author" content="Osa Fishing Pro">
+    <meta name="twitter-domain" content="osafishingpro.com">
+    <meta name="twitter-image" content="{{ asset('images/osa_transparent_circle.png') }}">
+    <meta name="twitter-title" content="{{ $product->name }} | Osa Fishing Pro CR">
+    <meta name="twitter-description" content="{{ $product->description }}">
+    <meta name="og:image" content="{{ $image }}">
+    <meta name="og:title" content="{{ $product->name }} | Osa Fishing Pro CR">
+    <meta name="og:description" content="Precio: ₡ {{ number_format($product->price, 0) }} - {{ $product->category->name }} - {{ $product->brand->name }}">
+    <meta name="og:url" content="{{ url()->current() }}">
+    <meta name="og:type" content="product">
+    <meta name="og:locale" content="es_CR">
+    <meta name="og:site_name" content="Osa Fishing Pro">
+    <meta name="og:availability" content="{{ $product->stock > 0 ? 'in stock' : 'out of stock' }}">
+    <meta name="og:product:category" content="{{ $product->category->name }}">
+    <meta name="og:product:brand" content="{{ $product->brand->name }}">
+    <meta name="og:product:condition" content="new">
+    <meta name="og:product:availability" content="in stock">
+    <meta name="og:product:price:amount" content="{{ number_format($product->price, 0) }}">
+    <meta name="og:product:price:currency" content="CRC">
+    <title>{{ $product->name }} | Osa Fishing Pro CR</title>
+
 @endsection
 
 @section('content')

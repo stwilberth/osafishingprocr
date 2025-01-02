@@ -1,5 +1,35 @@
 @extends('layouts.app')
 
+@section('meta')
+    <meta name="description" content="Tienda de pesca en Costa Rica, Cañas, Carretes y Señuelos | Osa Fishing Pro">
+    <meta name="keywords" content="Pesca, Costa Rica, Cañas, Carretes, Señuelos, Osa Fishing Pro">
+    <meta name="author" content="Osa Fishing Pro">
+    <meta name="robots" content="index, follow">
+    <meta name="googlebot" content="index, follow">
+    <meta name="google-site-verification" content="1234567890">
+    <meta name="msvalidate.01" content="1234567890">
+    <meta name="yandex-verification" content="1234567890">
+    <meta name="alexa-verification" content="1234567890">
+    <meta name="bing-verification" content="1234567890">
+    <meta name="baidu-site-verification" content="1234567890">
+    <meta name="facebook-domain-verification" content="1234567890">
+    <meta name="twitter-card" content="summary_large_image">
+    <meta name="twitter-site" content="@osafishingpro">
+    <meta name="twitter-creator" content="@osafishingpro">
+    <meta name="twitter-domain" content="osafishingpro.com">
+    <meta name="twitter-image" content="{{ asset('images/osa_transparent_circle.png') }}">
+    <meta name="twitter-title" content="Osa Fishing Pro">
+    <meta name="twitter-description" content="Tienda de pesca en Costa Rica, Cañas, Carretes y Señuelos | Osa Fishing Pro">
+    <meta name="og:image" content="{{ asset('images/osa_transparent_circle.png') }}">
+    <meta name="og:title" content="Osa Fishing Pro">
+    <meta name="og:description" content="Tienda de pesca en Costa Rica, Cañas, Carretes y Señuelos | Osa Fishing Pro">
+    <meta name="og:url" content="{{ url()->current() }}">
+    <meta name="og:type" content="website">
+    <meta name="og:locale" content="es_CR">
+    <meta name="og:site_name" content="Osa Fishing Pro">
+    <title>Osa Fishing Pro | Cañas, Carretes y Señuelos</title>
+@endsection
+
 @section('content')
     <!-- create product link -->
     @if (Auth::check() && Auth::user()->hasRole('admin'))
