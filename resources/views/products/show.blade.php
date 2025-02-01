@@ -18,6 +18,7 @@
     <meta name="twitter-title" content="{{ $product->name }} | Osa Fishing Pro CR">
     <meta name="twitter-description" content="{{ $product->description }}">
     <meta name="og:image" content="{{ $image }}">
+    <meta name="og:image:secure_url" content="{{ $image }}">
     <meta name="og:title" content="{{ $product->name }} | Osa Fishing Pro CR">
     <meta name="og:description" content="Precio: ₡ {{ number_format($product->price, 0) }} - {{ $product->category->name }} - {{ $product->brand->name }}">
     <meta name="og:url" content="{{ url()->current() }}">
