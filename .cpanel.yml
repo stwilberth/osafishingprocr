@@ -2,9 +2,14 @@ deployment:
   tasks:
     - export DEPLOYPATH=/home3/apren173/osafishingprocr.com/
 
-    - /bin/cp -R app bootstrap config database public resources routes artisan composer.json composer.lock package.json vite.config.js $DEPLOYPATH
+    - /bin/cp -R app bootstrap config database public resources routes artisan composer.json composer.lock package.json postcss.config.js tailwindcss.config.js vite.config.js $DEPLOYPATH
 
     - cd $DEPLOYPATH
+
+    # Construir assets de producción
+    - echo "Building production assets..." >> deployment.log
+    - npm install >> deployment.log 2>&1
+    - npm run build >> deployment.log 2>&1
 
     # Limpiar y optimizar Laravel
     - echo "Running Laravel optimizations..." >> deployment.log
