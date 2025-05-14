@@ -24,7 +24,12 @@
     @yield('styles')
 
     <!-- production -->
-    @vite(['resources/css/app.css', 'resources/js/app.js'])
+    <link rel="preload" as="style" href="/build/assets/app-DGhkTmTU.css" />
+    <link rel="modulepreload" href="/build/assets/app-aHOSkUm3.js" />
+    <link rel="stylesheet" href="/build/assets/app-DGhkTmTU.css" />
+    <script type="module" src="/build/assets/app-aHOSkUm3.js"></script>
+    <!-- development -->
+    {{-- @vite(['resources/css/app.css', 'resources/js/app.js']) --}}
 </head>
 
 <body class="font-sans text-gray-900 antialiased">
