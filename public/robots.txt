@@ -1,2 +1,11 @@
 User-agent: *
-Disallow:
+User-agent: *
+Allow: /
+Disallow: /dashboard
+Disallow: /profile
+Disallow: /login
+Disallow: /register
+Disallow: /password
+
+# Sitemap
+Sitemap: https://osafishingprocr.com/sitemap.xml

@@ -14,6 +14,9 @@
 
         gtag('config', 'G-MQXY01X6RM');
     </script>
+    
+    <!-- Schema.org para la organización -->
+    <x-schema.organization-schema />
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="csrf-token" content="{{ csrf_token() }}">
@@ -22,10 +25,9 @@
     @hasSection('meta')
         @yield('meta')
     @else
-        <x-customize.meta-tags title="{{ config('app.name', 'OsaFishingProCR.com') }}"
-            description="Tienda de pesca en Costa Rica" image="{{ asset('images/osa_transparent_circle.png') }}" />
+        <x-customize.meta-tags-optimized title="{{ config('app.name', 'OsaFishingProCR.com') }}"
+            description="Tienda de pesca en Costa Rica especializada en equipos para pesca recreativa y de consumo en la zona sur. Cañas, carretes y señuelos para pescadores que disfrutan la pesca como pasatiempo y para consumo propio." image="{{ asset('images/osa_transparent_circle.png') }}" />
     @endif
-    <meta property="og:url" content="{{ url()->current() }}" />
 
 
 

@@ -37,6 +37,9 @@
 @endsection
 
 @section('content')
+    {{-- Implementación de Schema.org para productos --}}
+    <x-schema.product-schema :product="$product" />
+    
     <div class="mt-5">
         <!-- Very little is needed to make a happy life. - Marcus Aurelius -->
         <div class="max-w-lg mx-auto p-6 bg-white rounded-lg shadow-md space-y-4">

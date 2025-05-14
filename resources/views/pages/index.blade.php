@@ -1,24 +1,27 @@
 @extends('layouts.app')
 
 @section('meta')
-    <meta name="description" content="Tienda de pesca en Costa Rica, Cañas, Carretes y Señuelos | Osa Fishing Pro">
-    <meta name="keywords" content="Pesca, Costa Rica, Cañas, Carretes, Señuelos, Osa Fishing Pro">
-    <meta name="author" content="Osa Fishing Pro">
+    <meta name="description" content="Tienda especializada en equipos de pesca para pescadores recreativos de la zona sur de Costa Rica. Cañas, carretes y señuelos ideales para pesca de consumo en ríos y mar de la Península de Osa.">
+    <meta name="keywords" content="pesca recreativa, zona sur Costa Rica, Osa, pesca para consumo, equipo de pesca, cañas, carretes, señuelos, pesca artesanal, pesca en mar, pesca en río, Golfito, Puerto Jiménez, Bahía Drake, Península de Osa">
+    <meta name="author" content="Osa Fishing Pro CR">
     <meta name="robots" content="index, follow">
     <meta name="googlebot" content="index, follow">
-    <meta name="twitter-card" content="summary_large_image">
-    <meta name="twitter-domain" content="osafishingpro.com">
-    <meta name="twitter-image" content="{{ asset('images/osa_transparent_circle.png') }}">
-    <meta name="twitter-title" content="Osa Fishing Pro CR | Tienda de pesca en Costa Rica">
-    <meta name="twitter-description" content="Tienda de pesca en Costa Rica, Cañas, Carretes y Señuelos | Osa Fishing Pro">
-    <meta name="og:image" content="{{ asset('images/osa_transparent_circle.png') }}">
-    <meta name="og:title" content="Osa Fishing Pro CR | Tienda de pesca en Costa Rica">
-    <meta name="og:description" content="Tienda de pesca en Costa Rica, Cañas, Carretes y Señuelos">
-    <meta name="og:url" content="{{ url()->current() }}">
-    <meta name="og:type" content="website">
-    <meta name="og:locale" content="es_CR">
-    <meta name="og:site_name" content="Osa Fishing Pro CR">
-    <title>Osa Fishing Pro CR | Tienda de pesca en Costa Rica</title>
+    <meta name="geo.region" content="CR-P">
+    <meta name="geo.placename" content="Zona Sur, Costa Rica">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:domain" content="osafishingpro.com">
+    <meta name="twitter:image" content="{{ asset('images/osa_transparent_circle.png') }}">
+    <meta name="twitter:title" content="Osa Fishing Pro CR | Equipos para pesca recreativa y de consumo en la zona sur de Costa Rica">
+    <meta name="twitter:description" content="Equipos especializados para pescadores que disfrutan la pesca como pasatiempo y para consumo propio en la Península de Osa y alrededores.">
+    <meta property="og:image" content="{{ asset('images/osa_transparent_circle.png') }}">
+    <meta property="og:title" content="Osa Fishing Pro CR | Equipos para pesca recreativa y de consumo en la zona sur de Costa Rica">
+    <meta property="og:description" content="Equipos especializados para pescadores que disfrutan la pesca como pasatiempo y para consumo propio en la Península de Osa y alrededores.">
+    <meta property="og:url" content="{{ url()->current() }}">
+    <meta property="og:type" content="website">
+    <meta property="og:locale" content="es_CR">
+    <meta property="og:site_name" content="Osa Fishing Pro CR - Equipos para pesca recreativa y de consumo">
+    <link rel="canonical" href="{{ url()->current() }}" />
+    <title>Osa Fishing Pro CR | Equipos para pesca recreativa y de consumo en la zona sur de Costa Rica</title>
 @endsection
 
 @section('content')
@@ -29,9 +32,12 @@
         <div class="w-5/6 mx-auto">
             <div class="bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4">
                 <h1 class="text-2xl font-bold mb-4 text-red-800">¡Bienvenido a Osa Fishing Pro CR!</h1>
+                <h2 class="text-xl font-semibold mb-3 text-gray-800">Tu tienda especializada en equipos para pesca recreativa y de consumo en la zona sur de Costa Rica</h2>
                 <p class="text-gray-700 text-base">
-                    Hola, bienvenido a la tienda en línea. Aquí encontrarás una gran variedad de productos para la
-                    pesca.
+                    Somos la tienda en línea preferida por pescadores de la Península de Osa y alrededores. Aquí encontrarás equipos de calidad seleccionados especialmente para la pesca en ríos y mar de nuestra región, ideales tanto para quienes disfrutan la pesca como pasatiempo como para quienes aprovechan su captura para consumo propio.
+                </p>
+                <p class="text-gray-700 text-base mt-4">
+                    Nuestros productos están seleccionados considerando las especies locales y las condiciones específicas de pesca en la zona sur de Costa Rica.
                 </p>
                 <p class="text-gray-700 text-base mt-4">
                     Si tienes alguna duda, puedes contactarnos por medio de nuestro <a href="https://wa.me/60283248" target="_blank" class="text-green-500">chat de WhatsApp</a> o llamarnos al
