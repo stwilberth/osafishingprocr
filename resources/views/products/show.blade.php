@@ -40,130 +40,127 @@
     {{-- Implementación de Schema.org para productos --}}
     <x-schema.product-schema :product="$product" />
     
-    <div class="mt-5">
-        <!-- Very little is needed to make a happy life. - Marcus Aurelius -->
-        <div class="max-w-lg mx-auto p-6 bg-white rounded-lg shadow-md space-y-4">
-            <!-- Product Name -->
-            <div>
-                <h2 class="text-xl font-semibold text-gray-800">{{ $product->name }}</h2>
-            </div>
-            <!-- Product Image -->
-            <div>
-                @if ($product->images->count() > 1)
-                    <x-customize.carousel-product :images="$product->images" />
-                @elseif ($product->images->count() == 1)
-                    <img src="{{ asset('storage/products/' . $product->images->first()->url) }}"
-                        alt="{{ $product->images->first()->name }}" class="w-full object-cover mb-4 rounded-lg">
-                @else
-                    <img src="{{ $image }}" alt="Placeholder" class="w-full object-cover mb-4 rounded-lg">
+    <div class="py-8 bg-gray-50">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="bg-white rounded-xl shadow-lg overflow-hidden">
+                <div class="md:flex">
+                    <!-- Product Image Section -->
+                    <div class="md:w-1/2 p-6">
+                        @if ($product->images->count() > 1)
+                            <div class="rounded-lg overflow-hidden shadow-md">
+                                <x-customize.carousel-product :images="$product->images" />
+                            </div>
+                        @elseif ($product->images->count() == 1)
+                            <img src="{{ asset('storage/products/' . $product->images->first()->url) }}"
+                                alt="{{ $product->images->first()->name }}" 
+                                class="w-full h-full object-cover rounded-lg shadow-md transition-transform duration-300 hover:scale-105">
+                        @else
+                            <img src="{{ $image }}" alt="Placeholder" 
+                                class="w-full h-full object-cover rounded-lg shadow-md transition-transform duration-300 hover:scale-105">
+                        @endif
+                    </div>
+
+                    <!-- Product Info Section -->
+                    <div class="md:w-1/2 p-8 bg-white">
+                        <div class="mb-6">
+                            <h1 class="text-3xl font-bold text-gray-900 mb-2">{{ $product->name }}</h1>
+                            <div class="flex items-center space-x-4 mb-4">
+                                @if ($product->category)
+                                    <span class="px-3 py-1 bg-blue-100 text-blue-800 rounded-full text-sm font-medium">
+                                        {{ $product->category->name }}
+                                    </span>
+                                @endif
+                                @if ($product->brand)
+                                    <span class="px-3 py-1 bg-gray-100 text-gray-800 rounded-full text-sm font-medium">
+                                        {{ $product->brand->name }}
+                                    </span>
+                                @endif
+                            </div>
+                        </div>
+
+                        <div class="mb-6">
+                            <p class="text-gray-600 text-lg leading-relaxed">{{ $product->description }}</p>
+                        </div>
+
+                        <div class="mb-6">
+                            <div class="flex items-center justify-between">
+                                <div class="text-3xl font-bold text-blue-600">
+                                    ₡ {{ number_format($product->price, 0) }}
+                                </div>
+                                <div class="text-sm text-gray-500">
+                                    {{ $product->stock }} unidades disponibles
+                                </div>
+                            </div>
+                        </div>
+
+            <!-- Action Buttons -->
+            <div class="space-y-4">
+                <!-- Admin Actions -->
+                @if (Auth::user() && Auth::user()->hasRole('admin'))
+                    <div class="flex flex-wrap gap-3">
+                        <a href="{{ route('products.images.create', $product) }}"
+                            class="inline-flex items-center px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors duration-200 shadow-sm hover:shadow-md">
+                            <i class="fas fa-image mr-2"></i>
+                            Agregar Imagen
+                        </a>
+                        <a href="{{ route('products.edit', $product) }}"
+                            class="inline-flex items-center px-4 py-2 bg-yellow-500 text-white rounded-lg hover:bg-yellow-600 transition-colors duration-200 shadow-sm hover:shadow-md">
+                            <i class="fas fa-edit mr-2"></i>
+                            Editar
+                        </a>
+                        <form action="{{ route('products.destroy', $product) }}" method="POST" class="inline">
+                            @csrf
+                            @method('DELETE')
+                            <button type="submit"
+                                class="inline-flex items-center px-4 py-2 bg-red-500 text-white rounded-lg hover:bg-red-600 transition-colors duration-200 shadow-sm hover:shadow-md">
+                                <i class="fas fa-trash-alt mr-2"></i>
+                                Eliminar
+                            </button>
+                        </form>
+                    </div>
                 @endif
-            </div>
 
-            <!-- Product Image -->
-            <div class="grid grid-cols-1 lg:grid-cols-2 gap-4">
+                <!-- Customer Actions -->
+                <div class="flex flex-wrap gap-3">
+                    <a href="https://api.whatsapp.com/send?phone=60283248&text=Hola,%20me%20gustaría%20saber%20más%20sobre%20{{ $product->name }}"
+                        class="flex inline-flex items-center px-6 py-3 bg-green-500 text-white rounded-lg hover:bg-green-600 transition-colors duration-200 shadow-sm hover:shadow-md text-lg font-medium">
+                        <i class="fab fa-whatsapp mr-2"></i> Consultar
+                    </a>
+                    <a href="/products"
+                        class="inline-flex items-center px-6 py-3 bg-gray-100 text-gray-700 rounded-lg hover:bg-gray-200 transition-colors duration-200 shadow-sm hover:shadow-md text-lg font-medium">
+                        <i class="fas fa-arrow-left mr-2"></i>
+                        Volver
+                    </a>
+                </div>
 
-                <!-- Product Info -->
-                <div class="space-y-4">
-                    <!-- Product categories -->
-                    @if ($product->category)
-                        <div>
-                            <h3 class="text-lg font-semibold text-gray-800">Categoría</h3>
-                            <p class="mt-1 text-gray-600">{{ $product->category->name }}</p>
-                        </div>
-                    @endif
-
-                    <!-- Product Brand -->
-                    @if ($product->brand)
-                        <div>
-                            <h3 class="text-lg font-semibold text-gray-800">Marca</h3>
-                            <p class="mt-1 text-gray-600">{{ $product->brand->name }}</p>
-                        </div>
-                    @endif
-
-                    <!-- Product Description -->
-                    <div>
-                        <p class="mt-1 text-gray-600">{{ $product->description }}</p>
-                    </div>
-
-                    <!-- Product Price -->
-                    <div>
-                        <h3 class="text-lg font-semibold text-gray-800">₡ {{ number_format($product->price, 0) }}</h3>
-                    </div>
-
-                    <!-- Product Stock -->
-                    <div>
-                        <h3 class="text-lg font-semibold text-gray-800">Cantidad</h3>
-                        <p class="mt-1 text-gray-600">{{ $product->stock }} unidades</p>
+                <!-- Social Sharing -->
+                <div class="mt-8 border-t pt-6">
+                    <h3 class="text-lg font-medium text-gray-900 mb-4">Compartir este producto</h3>
+                    <div class="flex items-center justify-center gap-4">
+                        <a href="https://www.facebook.com/sharer/sharer.php?u={{ url()->current() }}"
+                            class="p-2 text-blue-600 hover:text-blue-800 hover:bg-blue-50 rounded-full transition-colors duration-200">
+                            <i class="fab fa-facebook fa-2x"></i>
+                        </a>
+                        <a href="https://twitter.com/intent/tweet?url={{ url()->current() }}"
+                            class="p-2 text-blue-400 hover:text-blue-600 hover:bg-blue-50 rounded-full transition-colors duration-200">
+                            <i class="fab fa-twitter fa-2x"></i>
+                        </a>
+                        <a href="https://www.linkedin.com/shareArticle?url={{ url()->current() }}"
+                            class="p-2 text-blue-700 hover:text-blue-900 hover:bg-blue-50 rounded-full transition-colors duration-200">
+                            <i class="fab fa-linkedin-in fa-2x"></i>
+                        </a>
+                        <a href="https://api.whatsapp.com/send?text={{ url()->current() }}"
+                            class="p-2 text-green-500 hover:text-green-700 hover:bg-green-50 rounded-full transition-colors duration-200">
+                            <i class="fab fa-whatsapp fa-2x"></i>
+                        </a>
+                        <a href="https://www.instagram.com/"
+                            class="p-2 text-pink-500 hover:text-pink-700 hover:bg-pink-50 rounded-full transition-colors duration-200">
+                            <i class="fab fa-instagram fa-2x"></i>
+                        </a>
                     </div>
                 </div>
             </div>
-
-            <!-- Button -->
-            <div class="flex flex-wrap justify-center space-x-2">
-                @if (Auth::user() && Auth::user()->hasRole('admin'))
-                    <a href="{{ route('products.images.create', $product) }}"
-                        class="m-2 inline-flex items-center px-2 py-1 sm:px-3 sm:py-2 bg-blue-600 border border-transparent rounded-md font-semibold text-white hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500 text-xs sm:text-sm">
-                        Add Image
-                    </a>
-                    <!-- Edit Button -->
-                    <a href="{{ route('products.edit', $product) }}"
-                        class="m-2 inline-flex items-center px-2 py-1 sm:px-3 sm:py-2 bg-yellow-600 border border-transparent rounded-md font-semibold text-white hover:bg-yellow-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-yellow-500 text-xs sm:text-sm">
-                        Editar
-                    </a>
-
-                    <!-- Delete Button -->
-                    <form action="{{ route('products.destroy', $product) }}" method="POST" class="inline">
-                        @csrf
-                        @method('DELETE')
-                        <button type="submit"
-                            class="m-2 inline-flex items-center px-2 py-1 sm:px-3 sm:py-2 bg-red-600 border border-transparent rounded-md font-semibold text-white hover:bg-red-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-red-500 text-xs sm:text-sm">
-                            Eliminar
-                        </button>
-                    </form>
-                @endif
-
-                <!-- ask for more whatsapp -->
-                <a href="https://api.whatsapp.com/send?phone=60283248&text=Hola,%20me%20gustaría%20saber%20más%20sobre%20{{ $product->name }}"
-                    class="m-2 inline-flex items-center px-2 py-1 sm:px-3 sm:py-2 bg-green-600 border border-transparent rounded-md font-semibold text-white hover:bg-green-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-green-500 text-xs sm:text-sm">
-                    {{-- whatsapp icon --}}
-                    <i class="fab fa-whatsapp-square fa-2x mr-2"></i>
-                    Preguntar
-                </a>
-
-                <a href="/products"
-                    class="m-2 inline-flex items-center px-2 py-1 sm:px-3 sm:py-2 bg-gray-600 border border-transparent rounded-md font-semibold text-white hover:bg-gray-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-500 text-xs sm:text-sm">
-                    Productos
-                </a>
-            </div>
-
-            <!-- title sharing -->
-            <div>
-                <h3 class="text-lg font-semibold text-gray-800">Compartir</h3>
-            </div>
-
-            <!-- sharing buttons -->
-            <div class="flex justify-end space-x-2">
-                <a href="https://www.facebook.com/sharer/sharer.php?u={{ url()->current() }}"
-                    class="text-blue-600 hover:text-blue-800">
-                    <i class="fab fa-facebook-square fa-2x"></i>
-                </a>
-                <a href="https://twitter.com/intent/tweet?url={{ url()->current() }}"
-                    class="text-blue-400 hover:text-blue-600">
-                    <i class="fab fa-twitter-square fa-2x"></i>
-                </a>
-                <a href="https://www.linkedin.com/shareArticle?url={{ url()->current() }}"
-                    class="text-blue-800 hover:text-blue-900">
-                    <i class="fab fa-linkedin fa-2x"></i>
-                </a>
-                <a href="https://api.whatsapp.com/send?text={{ url()->current() }}"
-                    class="text-green-400 hover:text-green-600">
-                    <i class="fab fa-whatsapp-square fa-2x"></i>
-                </a>
-                <!-- instagram -->
-                <a href="https://www.instagram.com/" class="text-pink-600 hover:text-pink-800">
-                    <i class="fab fa-instagram-square fa-2x"></i>
-                </a>
-            </div>
-
         </div>
+    </div>
+</div>
     @endsection

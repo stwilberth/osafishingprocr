@@ -87,7 +87,7 @@
                 <!-- Card 1 -->
                 @foreach ($products as $product)
                     <div class="bg-white rounded-lg p-6 shadow-lg hover:shadow-xl transition-shadow duration-300">
-                        <a href="/products/{{ $product->id }}">
+                        <a href="/products/{{ $product->slug }}">
                             <div class="mb-4">
                                 @if ($product->images->first())
                                     <img src="{{ asset('storage/' . $product->images->first()->path) }}" alt="{{ $product->name }}"

@@ -31,9 +31,6 @@
 
 
 
-    <!-- Fonts -->
-    <link rel="preconnect" href="https://fonts.bunny.net">
-    <link href="https://fonts.bunny.net/css?family=figtree:400,500,600&display=swap" rel="stylesheet" />
     <!-- icons awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
     @yield('styles')
@@ -122,17 +119,17 @@
                     <!-- phone -->
                     <a href="tel:60283248" class="text-blue-500"><i class="fas fa-phone "></i></a>
                     <!-- facebook -->
-                    <a href="https://www.facebook.com/osafishingpro" target="_blank" class="text-blue-500"><i class="fab fa-facebook"></i></a>
+                    <a href="https://www.facebook.com/OsaFishingProo" target="_blank" class="text-blue-500"><i class="fab fa-facebook"></i></a>
                     <!-- instagram -->
-                    <a href="https://www.instagram.com/osafishingpro" target="_blank" class="text-purple-500"><i class="fab fa-instagram"></i></a>
+{{--                     <a href="https://www.instagram.com/osafishingpro" target="_blank" class="text-purple-500"><i class="fab fa-instagram"></i></a>
                     <!-- twitter -->
                     <a href="https://www.twitter.com/osafishingpro" target="_blank" class="text-blue-500"><i class="fab fa-twitter"></i></a>
                     <!-- youtube -->
                     <a href="https://www.youtube.com/osafishingpro" target="_blank" class="text-red-500"><i class="fab fa-youtube"></i></a>
-                    <!-- tiktok -->
-                    <a href="https://www.tiktok.com/osafishingpro" target="_blank" class="text-pink-500"><i class="fab fa-tiktok"></i></a>
+ --}}                    <!-- tiktok -->
+                    <a href="https://www.tiktok.com/@osafishingpro" target="_blank" class="text-pink-500"><i class="fab fa-tiktok"></i></a>
                     <!-- google maps -->
-                    <a href="https://maps.app.goo.gl/xJLTmmg2NLbKyf658" target="_blank" class="text-green-500"><i class="fas fa-map-marker-alt"></i></a>
+                    <a href="https://maps.app.goo.gl/NhfuqEpCLwxTCPQK7" target="_blank" class="text-green-500"><i class="fas fa-map-marker-alt"></i></a>
                 </div>
             </div>
 
