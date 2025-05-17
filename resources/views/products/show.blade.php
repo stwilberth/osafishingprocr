@@ -45,15 +45,17 @@
             <div class="bg-white rounded-xl shadow-lg overflow-hidden">
                 <div class="md:flex">
                     <!-- Product Image Section -->
-                    <div class="md:w-1/2 p-6">
-                        @if ($product->images->count() > 1)
-                            <img src="{{ asset('storage/products/' . $product->images->first()->url) }}"
-                                alt="{{ $product->images->first()->name }}" 
-                                class="w-full h-full object-cover rounded-lg shadow-md transition-transform duration-300 hover:scale-105">
-                        @else
-                            <img src="{{ $image }}" alt="Placeholder" 
-                                class="w-full h-full object-cover rounded-lg shadow-md transition-transform duration-300 hover:scale-105">
-                        @endif
+                    <div class="md:w-1/2 p-6 flex items-center justify-center">
+                        <div class="max-w-md w-full">
+                            @if ($product->images->count() > 1)
+                                <img src="{{ asset('storage/products/' . $product->images->first()->url) }}"
+                                    alt="{{ $product->images->first()->name }}" 
+                                    class="w-full h-auto max-h-[500px] object-contain rounded-lg shadow-md transition-transform duration-300 hover:scale-105">
+                            @else
+                                <img src="{{ $image }}" alt="Placeholder" 
+                                    class="w-full h-auto max-h-[500px] object-contain rounded-lg shadow-md transition-transform duration-300 hover:scale-105">
+                            @endif
+                        </div>
                     </div>
 
                     <!-- Product Info Section -->
