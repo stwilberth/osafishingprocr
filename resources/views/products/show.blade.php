@@ -47,10 +47,6 @@
                     <!-- Product Image Section -->
                     <div class="md:w-1/2 p-6">
                         @if ($product->images->count() > 1)
-                            <div class="rounded-lg overflow-hidden shadow-md">
-                                <x-customize.carousel-product :images="$product->images" />
-                            </div>
-                        @elseif ($product->images->count() == 1)
                             <img src="{{ asset('storage/products/' . $product->images->first()->url) }}"
                                 alt="{{ $product->images->first()->name }}" 
                                 class="w-full h-full object-cover rounded-lg shadow-md transition-transform duration-300 hover:scale-105">
