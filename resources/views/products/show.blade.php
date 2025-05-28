@@ -160,5 +160,62 @@
             </div>
         </div>
     </div>
+    
+    <!-- Modal para vista ampliada (lightbox) -->
+    @if ($product->images->count() > 0)
+    <div id="image-modal" tabindex="-1" aria-hidden="true" class="fixed top-0 left-0 right-0 z-50 hidden w-full p-4 overflow-x-hidden overflow-y-auto md:inset-0 h-[calc(100%-1rem)] max-h-full">
+        <div class="relative w-full max-w-4xl max-h-full">
+            <!-- Modal content -->
+            <div class="relative bg-white rounded-lg shadow">
+                <!-- Modal header -->
+                <div class="flex items-center justify-between p-4 md:p-5 border-b rounded-t">
+                    <h3 class="text-xl font-medium text-gray-900">{{ $product->name }}</h3>
+                    <button type="button" class="text-gray-400 bg-transparent hover:bg-gray-200 hover:text-gray-900 rounded-lg text-sm w-8 h-8 ms-auto inline-flex justify-center items-center" data-modal-hide="image-modal">
+                        <svg class="w-3 h-3" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 14 14">
+                            <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m1 1 6 6m0 0 6 6M7 7l6-6M7 7l-6 6"/>
+                        </svg>
+                        <span class="sr-only">Cerrar modal</span>
+                    </button>
+                </div>
+                <!-- Modal body -->
+                <div class="p-4 md:p-5">
+                    <img id="modal-image" src="" class="w-full h-auto max-h-[80vh] object-contain" alt="{{ $product->name }}">
+                </div>
+            </div>
+        </div>
+    </div>
+    @endif
+
+    <!-- JavaScript para el lightbox -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Obtener todas las imágenes que pueden abrir el modal
+            const images = document.querySelectorAll('[data-modal-toggle="image-modal"]');
+            const modalImage = document.getElementById('modal-image');
+            
+            // Añadir evento click a cada imagen
+            images.forEach(img => {
+                img.addEventListener('click', function() {
+                    // Actualizar la imagen del modal con la URL de la imagen clickeada
+                    modalImage.src = this.getAttribute('data-image-url');
+                });
+            });
+            
+            // Sincronizar miniaturas con el carrusel
+            const thumbnails = document.querySelectorAll('[data-carousel-slide-to]');
+            thumbnails.forEach(thumb => {
+                thumb.addEventListener('click', function() {
+                    // Remover borde activo de todas las miniaturas
+                    thumbnails.forEach(t => t.classList.remove('border-blue-500'));
+                    thumbnails.forEach(t => t.classList.add('border-transparent'));
+                    
+                    // Añadir borde activo a la miniatura seleccionada
+                    this.classList.remove('border-transparent');
+                    this.classList.add('border-blue-500');
+                });
+            });
+        });
+    </script>
+@endsection
 </div>
     @endsection
