@@ -217,5 +217,4 @@
         });
     </script>
 @endsection
-</div>
-    @endsection
+ 
