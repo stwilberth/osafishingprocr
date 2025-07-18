@@ -45,17 +45,33 @@
             <div class="bg-white rounded-xl shadow-lg overflow-hidden">
                 <div class="md:flex">
                     <!-- Product Image Section -->
-                    <div class="md:w-1/2 p-6 flex items-center justify-center">
-                        <div class="max-w-md w-full">
-                            @if ($product->images->count() > 1)
-                                <img src="{{ asset('storage/products/' . $product->images->first()->url) }}"
-                                    alt="{{ $product->images->first()->name }}" 
-                                    class="w-full h-auto max-h-[500px] object-contain rounded-lg shadow-md transition-transform duration-300 hover:scale-105">
-                            @else
-                                <img src="{{ $image }}" alt="Placeholder" 
-                                    class="w-full h-auto max-h-[500px] object-contain rounded-lg shadow-md transition-transform duration-300 hover:scale-105">
-                            @endif
+                    <div class="md:w-1/2 p-6 flex flex-col items-center justify-center">
+                        <!-- Swiper principal -->
+                        <div class="swiper main-swiper mb-4" style="width:100%;max-width:400px;">
+                            <div class="swiper-wrapper">
+                                @foreach ($product->images as $img)
+                                    <div class="swiper-slide">
+                                        <img src="{{ asset('storage/products/' . $img->url) }}"
+                                            alt="{{ $img->name }}"
+                                            class="w-full h-auto max-h-[400px] object-contain rounded-lg shadow-md"/>
+                                    </div>
+                                @endforeach
+                            </div>
                         </div>
+                        <!-- Swiper miniaturas -->
+                        @if ($product->images->count() > 1)
+                        <div class="swiper thumb-swiper" style="width:100%;max-width:400px;">
+                            <div class="swiper-wrapper">
+                                @foreach ($product->images as $img)
+                                    <div class="swiper-slide">
+                                        <img src="{{ asset('storage/products/' . $img->url) }}"
+                                            alt="{{ $img->name }}"
+                                            class="w-20 h-20 object-contain rounded border-2 border-transparent"/>
+                                    </div>
+                                @endforeach
+                            </div>
+                        </div>
+                        @endif
                     </div>
 
                     <!-- Product Info Section -->
@@ -186,35 +202,55 @@
     </div>
     @endif
 
-    <!-- JavaScript para el lightbox -->
+    <!-- JavaScript para el lightbox y carrusel de imágenes -->
     <script>
+        function changeMainImage(url, thumb) {
+            // Cambia la imagen principal
+            document.getElementById('main-product-image').src = url;
+
+            // Quita el borde azul de todas las miniaturas
+            document.querySelectorAll('.thumbnail').forEach(function(img) {
+                img.classList.remove('border-blue-500');
+                img.classList.add('border-transparent');
+            });
+
+            // Agrega el borde azul a la miniatura seleccionada
+            thumb.classList.remove('border-transparent');
+            thumb.classList.add('border-blue-500');
+        }
+
+        // Opcional: Marca la primera miniatura como activa al cargar
         document.addEventListener('DOMContentLoaded', function() {
-            // Obtener todas las imágenes que pueden abrir el modal
-            const images = document.querySelectorAll('[data-modal-toggle="image-modal"]');
-            const modalImage = document.getElementById('modal-image');
-            
-            // Añadir evento click a cada imagen
-            images.forEach(img => {
-                img.addEventListener('click', function() {
-                    // Actualizar la imagen del modal con la URL de la imagen clickeada
-                    modalImage.src = this.getAttribute('data-image-url');
-                });
-            });
-            
-            // Sincronizar miniaturas con el carrusel
-            const thumbnails = document.querySelectorAll('[data-carousel-slide-to]');
-            thumbnails.forEach(thumb => {
-                thumb.addEventListener('click', function() {
-                    // Remover borde activo de todas las miniaturas
-                    thumbnails.forEach(t => t.classList.remove('border-blue-500'));
-                    thumbnails.forEach(t => t.classList.add('border-transparent'));
-                    
-                    // Añadir borde activo a la miniatura seleccionada
-                    this.classList.remove('border-transparent');
-                    this.classList.add('border-blue-500');
-                });
-            });
+            let firstThumb = document.querySelector('.thumbnail');
+            if (firstThumb) {
+                firstThumb.classList.remove('border-transparent');
+                firstThumb.classList.add('border-blue-500');
+            }
         });
     </script>
+@endsection
+ 
+@section('scripts')
+@parent
+<script>
+    document.addEventListener('DOMContentLoaded', function () {
+        var thumbSwiper = new Swiper('.thumb-swiper', {
+            spaceBetween: 10,
+            slidesPerView: Math.min({{ $product->images->count() }}, 5),
+            freeMode: true,
+            watchSlidesProgress: true,
+        });
+        var mainSwiper = new Swiper('.main-swiper', {
+            spaceBetween: 10,
+            navigation: {
+                nextEl: '.swiper-button-next',
+                prevEl: '.swiper-button-prev',
+            },
+            thumbs: {
+                swiper: thumbSwiper,
+            },
+        });
+    });
+</script>
 @endsection
  
