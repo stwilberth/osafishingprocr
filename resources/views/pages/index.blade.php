@@ -1,8 +1,10 @@
 @extends('layouts.app')
 
 @section('meta')
-    <meta name="description" content="Tienda especializada en equipos de pesca para pescadores recreativos de la zona sur de Costa Rica. Cañas, carretes y señuelos ideales para pesca de consumo en ríos y mar de la Península de Osa.">
-    <meta name="keywords" content="pesca deportiva, zona sur Costa Rica, Osa, pesca para consumo, equipo de pesca, cañas, carretes, señuelos, pesca artesanal, pesca en mar, pesca en río, Golfito, Puerto Jiménez, Bahía Drake, Península de Osa">
+    <meta name="description"
+        content="Tienda especializada en equipos de pesca para pescadores recreativos de la zona sur de Costa Rica. Cañas, carretes y señuelos ideales para pesca de consumo en ríos y mar de la Península de Osa.">
+    <meta name="keywords"
+        content="pesca deportiva, zona sur Costa Rica, Osa, pesca para consumo, equipo de pesca, cañas, carretes, señuelos, pesca artesanal, pesca en mar, pesca en río, Golfito, Puerto Jiménez, Bahía Drake, Península de Osa">
     <meta name="author" content="Osa Fishing Pro CR">
     <meta name="robots" content="index, follow">
     <meta name="googlebot" content="index, follow">
@@ -11,11 +13,15 @@
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:domain" content="osafishingpro.com">
     <meta name="twitter:image" content="{{ asset('images/osa_transparent_circle.png') }}">
-    <meta name="twitter:title" content="Osa Fishing Pro CR | Equipos para pesca deportiva y de consumo en la zona sur de Costa Rica">
-    <meta name="twitter:description" content="Equipos especializados para pescadores que disfrutan la pesca como pasatiempo y para consumo propio en la Península de Osa y alrededores.">
+    <meta name="twitter:title"
+        content="Osa Fishing Pro CR | Equipos para pesca deportiva y de consumo en la zona sur de Costa Rica">
+    <meta name="twitter:description"
+        content="Equipos especializados para pescadores que disfrutan la pesca como pasatiempo y para consumo propio en la Península de Osa y alrededores.">
     <meta property="og:image" content="{{ asset('images/osa_transparent_circle.png') }}">
-    <meta property="og:title" content="Osa Fishing Pro CR | Equipos para pesca deportiva y de consumo en la zona sur de Costa Rica">
-    <meta property="og:description" content="Equipos especializados para pescadores que disfrutan la pesca como pasatiempo y para consumo propio en la Península de Osa y alrededores.">
+    <meta property="og:title"
+        content="Osa Fishing Pro CR | Equipos para pesca deportiva y de consumo en la zona sur de Costa Rica">
+    <meta property="og:description"
+        content="Equipos especializados para pescadores que disfrutan la pesca como pasatiempo y para consumo propio en la Península de Osa y alrededores.">
     <meta property="og:url" content="{{ url()->current() }}">
     <meta property="og:type" content="website">
     <meta property="og:locale" content="es_CR">
@@ -32,15 +38,21 @@
         <div class="w-5/6 mx-auto">
             <div class="bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4">
                 <h1 class="text-2xl font-bold mb-4 text-red-800">¡Bienvenido a Osa Fishing Pro CR!</h1>
-                <h2 class="text-xl font-semibold mb-3 text-gray-800">Tu tienda especializada en equipos para pesca deportiva y de consumo en la zona sur de Costa Rica</h2>
+                <h2 class="text-xl font-semibold mb-3 text-gray-800">Tu tienda especializada en equipos para pesca deportiva
+                    y de consumo en la zona sur de Costa Rica</h2>
                 <p class="text-gray-700 text-base">
-                    Somos la tienda en línea preferida por pescadores de la Península de Osa y alrededores. Aquí encontrarás equipos de calidad seleccionados especialmente para la pesca en ríos y mar de nuestra región, ideales tanto para quienes disfrutan la pesca como pasatiempo como para quienes aprovechan su captura para consumo propio.
+                    Somos la tienda en línea preferida por pescadores de la Península de Osa y alrededores. Aquí encontrarás
+                    equipos de calidad seleccionados especialmente para la pesca en ríos y mar de nuestra región, ideales
+                    tanto para quienes disfrutan la pesca como pasatiempo como para quienes aprovechan su captura para
+                    consumo propio.
                 </p>
                 <p class="text-gray-700 text-base mt-4">
-                    Nuestros productos están seleccionados considerando las especies locales y las condiciones específicas de pesca en la zona sur de Costa Rica.
+                    Nuestros productos están seleccionados considerando las especies locales y las condiciones específicas
+                    de pesca en la zona sur de Costa Rica.
                 </p>
                 <p class="text-gray-700 text-base mt-4">
-                    Si tienes alguna duda, puedes contactarnos por medio de nuestro <a href="https://wa.me/60283248" target="_blank" class="text-green-500">chat de WhatsApp</a> o llamarnos al
+                    Si tienes alguna duda, puedes contactarnos por medio de nuestro <a href="https://wa.me/60283248"
+                        target="_blank" class="text-green-500">chat de WhatsApp</a> o llamarnos al
                     teléfono <a href="tel:60283248" class="text-blue-500">6028-3248</a>.
                 </p>
             </div>
@@ -49,66 +61,183 @@
 
 
         <!-- Categorías más populares -->
-        <div class="w-5/6 mx-auto py-10">
-            <h1 class="text-2xl font-bold text-gray-800 mb-4 text-center">Categorías más populares</h1>
-            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
-                <!-- Card 1 -->
-                <div
-                    class="rounded-xl p-8 shadow-lg transition transform hover:scale-105 bg-gradient-to-br from-blue-400 to-green-400">
-                    <a href="/products?category=3&brand=" class="block text-center text-white">
-                        <h3 class="text-2xl font-semibold mb-4">Carrtes de Spining</h3>
-                        <p class="text-base">Encuentra carretes de Spining para todo tipo de pesca.</p>
-                    </a>
+        <section class="py-16 bg-gradient-to-br from-slate-50 via-blue-50 to-indigo-50">
+            <div class="max-w-7xl mx-auto px-4">
+                <div class="text-center mb-12">
+                    <h2 class="text-4xl font-bold text-slate-800 mb-4">Categorías Destacadas</h2>
+                    <p class="text-lg text-slate-600 max-w-2xl mx-auto">Descubre nuestras categorías más populares con
+                        equipos seleccionados especialmente para la pesca en Costa Rica</p>
                 </div>
-                <!-- Card 2 -->
-                <div
-                    class="rounded-xl p-8 shadow-lg transition transform hover:scale-105 bg-gradient-to-br from-green-400 to-blue-400">
-                    <a href="/products?category=4&brand=" class="block text-center text-white">
-                        <h3 class="text-2xl font-semibold mb-4">Carretes Baitcast</h3>
-                        <p class="text-base">Carretes duraderos para una experiencia óptima.</p>
-                    </a>
-                </div>
-                <!-- Card 3 -->
-                <div
-                    class="rounded-xl p-8 shadow-lg transition transform hover:scale-105 bg-gradient-to-br from-blue-500 to-teal-400">
-                    <a href="/products?category=5&brand=" class="block text-center text-white">
-                        <h3 class="text-2xl font-semibold mb-4">Señuelos</h3>
-                        <p class="text-base">Variedad de señuelos para todas tus necesidades.</p>
-                    </a>
-                </div>
-            </div>
-        </div>
 
-
-
-        <div class="w-5/6 mx-auto py-10">
-            <h1 class="text-2xl font-bold mb-4 text-center">Productos destacados</h1>
-            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
-                <!-- Card 1 -->
-                @foreach ($products as $product)
-                    <div class="bg-white rounded-lg p-6 shadow-lg hover:shadow-xl transition-shadow duration-300">
-                        <a href="/products/{{ $product->slug }}">
-                            <div class="mb-4">
-                                @if ($product->images->first())
-                                    <img src="{{ asset('storage/' . $product->images->first()->path) }}" alt="{{ $product->name }}"
-                                        class="w-full h-48 object-cover mb-4">
-                                @else
-                                    <img src="{{ asset('images/osa_transparent_circle.png') }}" alt="{{ $product->name }}"
-                                        class="w-full h-48 object-cover mb-4">
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                    <!-- Carretes Spinning -->
+                    <div
+                        class="group relative overflow-hidden rounded-3xl shadow-2xl hover:shadow-3xl transition-all duration-700 transform hover:-translate-y-3">
+                        <div
+                            class="absolute inset-0 bg-gradient-to-br from-sky-400 via-blue-500 to-indigo-600 opacity-95 group-hover:opacity-100 transition-opacity duration-700">
+                        </div>
+                        <!-- Overlay blanco para mejorar legibilidad del texto -->
+                        <div class="absolute inset-0 bg-white bg-opacity-80"></div>
+                        <div class="relative p-8 text-gray-800 h-full flex flex-col justify-between">
+                            <div class="text-center">
+                                <div class="mb-6">
+                                    @if ($spinningProduct && $spinningProduct->images->first())
+                                        <img src="{{ asset('storage/' . $spinningProduct->images->first()->path) }}"
+                                            alt="{{ $spinningProduct->name }}"
+                                            class="w-28 h-28 object-cover rounded-2xl mx-auto mb-4 border-4 border-blue-200 border-opacity-60 shadow-lg group-hover:scale-110 transition-transform duration-500">
+                                    @else
+                                        <i
+                                            class="fas fa-fish text-5xl mb-4 text-blue-600 opacity-90 group-hover:opacity-100 transition-opacity"></i>
+                                    @endif
+                                </div>
+                                <h3 class="text-2xl font-bold mb-4 text-gray-800">Carretes Spinning</h3>
+                                @if ($spinningProduct)
+                                    <p class="text-gray-700 text-sm font-semibold mb-2">{{ $spinningProduct->name }}</p>
+                                    <p class="text-blue-600 text-xl font-bold mb-4">
+                                        ₡{{ number_format($spinningProduct->price, 0, ',', '.') }}</p>
                                 @endif
+                                <p class="text-gray-600 text-sm leading-relaxed mb-6">
+                                    Carretes de spinning ideales para pesca en ríos y mar. Perfectos para principiantes y
+                                    expertos.
+                                </p>
                             </div>
-                            <h3 class="text-xl font-semibold mb-2">{{ $product->name }}</h3>
-                            <p class="text-gray-500 text-sm">Una caña de pesca de alta calidad para tu próximo viaje.</p>
-                        </a>
+                            <a href="/products?category=3&brand="
+                                class="inline-block bg-blue-600 hover:bg-blue-700 text-white font-semibold py-4 px-8 rounded-full transition-all duration-500 transform hover:scale-105 shadow-lg">
+                                Ver Productos
+                                <i class="fas fa-arrow-right ml-2"></i>
+                            </a>
+                        </div>
                     </div>
-                @endforeach
+
+                    <!-- Carretes Baitcast -->
+                    <div
+                        class="group relative overflow-hidden rounded-3xl shadow-2xl hover:shadow-3xl transition-all duration-700 transform hover:-translate-y-3">
+                        <div
+                            class="absolute inset-0 bg-gradient-to-br from-emerald-400 via-teal-500 to-cyan-600 opacity-95 group-hover:opacity-100 transition-opacity duration-700">
+                        </div>
+                        <!-- Overlay blanco para mejorar legibilidad del texto -->
+                        <div class="absolute inset-0 bg-white bg-opacity-80"></div>
+                        <div class="relative p-8 text-gray-800 h-full flex flex-col justify-between">
+                            <div class="text-center">
+                                <div class="mb-6">
+                                    @if ($baitcastProduct && $baitcastProduct->images->first())
+                                        <img src="{{ asset('storage/' . $baitcastProduct->images->first()->path) }}"
+                                            alt="{{ $baitcastProduct->name }}"
+                                            class="w-28 h-28 object-cover rounded-2xl mx-auto mb-4 border-4 border-green-200 border-opacity-60 shadow-lg group-hover:scale-110 transition-transform duration-500">
+                                    @else
+                                        <i
+                                            class="fas fa-anchor text-5xl mb-4 text-green-600 opacity-90 group-hover:opacity-100 transition-opacity"></i>
+                                    @endif
+                                </div>
+                                <h3 class="text-2xl font-bold mb-4 text-gray-800">Carretes Baitcast</h3>
+                                @if ($baitcastProduct)
+                                    <p class="text-gray-700 text-sm font-semibold mb-2">{{ $baitcastProduct->name }}</p>
+                                    <p class="text-green-600 text-xl font-bold mb-4">
+                                        ₡{{ number_format($baitcastProduct->price, 0, ',', '.') }}</p>
+                                @endif
+                                <p class="text-gray-600 text-sm leading-relaxed mb-6">
+                                    Carretes profesionales para pesca deportiva. Máximo control y precisión en cada
+                                    lanzamiento.
+                                </p>
+                            </div>
+                            <a href="/products?category=4&brand="
+                                class="inline-block bg-green-600 hover:bg-green-700 text-white font-semibold py-4 px-8 rounded-full transition-all duration-500 transform hover:scale-105 shadow-lg">
+                                Ver Productos
+                                <i class="fas fa-arrow-right ml-2"></i>
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- Señuelos -->
+                    <div
+                        class="group relative overflow-hidden rounded-3xl shadow-2xl hover:shadow-3xl transition-all duration-700 transform hover:-translate-y-3">
+                        <div
+                            class="absolute inset-0 bg-gradient-to-br from-violet-400 via-purple-500 to-fuchsia-600 opacity-95 group-hover:opacity-100 transition-opacity duration-700">
+                        </div>
+                        <!-- Overlay blanco para mejorar legibilidad del texto -->
+                        <div class="absolute inset-0 bg-white bg-opacity-80"></div>
+                        <div class="relative p-8 text-gray-800 h-full flex flex-col justify-between">
+                            <div class="text-center">
+                                <div class="mb-6">
+                                    @if ($luresProduct && $luresProduct->images->first())
+                                        <img src="{{ asset('storage/' . $luresProduct->images->first()->path) }}"
+                                            alt="{{ $luresProduct->name }}"
+                                            class="w-28 h-28 object-cover rounded-2xl mx-auto mb-4 border-4 border-purple-200 border-opacity-60 shadow-lg group-hover:scale-110 transition-transform duration-500">
+                                    @else
+                                        <i
+                                            class="fas fa-water text-5xl mb-4 text-purple-600 opacity-90 group-hover:opacity-100 transition-opacity"></i>
+                                    @endif
+                                </div>
+                                <h3 class="text-2xl font-bold mb-4 text-gray-800">Señuelos</h3>
+                                @if ($luresProduct)
+                                    <p class="text-gray-700 text-sm font-semibold mb-2">{{ $luresProduct->name }}</p>
+                                    <p class="text-purple-600 text-xl font-bold mb-4">
+                                        ₡{{ number_format($luresProduct->price, 0, ',', '.') }}</p>
+                                @endif
+                                <p class="text-gray-600 text-sm leading-relaxed mb-6">
+                                    Amplia variedad de señuelos para atraer las mejores especies. Desde artificiales hasta
+                                    naturales.
+                                </p>
+                            </div>
+                            <a href="/products?category=5&brand="
+                                class="inline-block bg-purple-600 hover:bg-purple-700 text-white font-semibold py-4 px-8 rounded-full transition-all duration-500 transform hover:scale-105 shadow-lg">
+                                Ver Productos
+                                <i class="fas fa-arrow-right ml-2"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Call to Action adicional -->
+                <div class="text-center mt-12">
+                    <a href="/products"
+                        class="inline-flex items-center bg-gradient-to-r from-slate-700 via-slate-800 to-slate-900 hover:from-slate-800 hover:to-slate-900 text-white font-bold py-5 px-10 rounded-full transition-all duration-500 transform hover:scale-105 shadow-2xl hover:shadow-3xl border border-slate-600">
+                        <i class="fas fa-shopping-bag mr-3 text-amber-400"></i>
+                        Ver Todas las Categorías
+                        <i class="fas fa-chevron-right ml-3 text-amber-400"></i>
+                    </a>
+                </div>
             </div>
-        </div>
+        </section>
+
+
+        <!-- PRODUCTOS DESTACADOS -->
+        <section class="bg-white py-12 w-full">
+            <h2 class="text-3xl font-bold text-blue-900 text-center mb-8">Productos Destacados</h2>
+            <div class="w-full px-2">
+                <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-6">
+                    @foreach ($featuredProducts as $product)
+                        <div
+                            class="bg-white rounded-lg shadow-md hover:shadow-lg transition-all duration-300 transform hover:-translate-y-1 p-4 flex flex-col items-center">
+                            @php
+                                $mainImage = $product->images->first();
+                            @endphp
+                            <img src="{{ $mainImage ? asset('storage/' . $mainImage->path) : asset('images/osa_transparent_circle.png') }}"
+                                alt="{{ $product->name }}"
+                                class="object-cover rounded-lg mb-3 w-full">
+
+                            <h3 class="text-sm font-semibold text-gray-800 mb-1 text-center">{{ $product->name }}</h3>
+
+                            <span
+                                class="text-lg text-blue-600 font-bold mb-3">₡{{ number_format($product->price, 0, ',', '.') }}</span>
+
+                            <a href="{{ route('products.show', $product->slug) }}"
+                                class="w-full bg-blue-600 hover:bg-blue-700 text-white text-xs font-semibold py-2 px-3 rounded-md transition-colors text-center">
+                                Ver Producto
+                            </a>
+                        </div>
+                    @endforeach
+                </div>
+            </div>
+        </section>
+
 
         <!-- sobre nosotros -->
         <div class="w-5/6 mx-auto pt-10 pb-4">
             <h1 class="text-2xl font-bold mb-4 text-center">Sobre nosotros</h1>
-            <p class="text-gray-500 text-md text-center">Somos una empresa dedicada a la venta de productos de pesca de alta calidad. Nos enfocamos en ofrecer productos de la mejor calidad para que puedas disfrutar de la pesca al máximo.</p>
+            <p class="text-gray-500 text-md text-center">Somos una empresa dedicada a la venta de productos de pesca de
+                alta calidad. Nos enfocamos en ofrecer productos de la mejor calidad para que puedas disfrutar de la pesca
+                al máximo.</p>
         </div>
 
         <!-- Features Section -->
@@ -116,74 +245,7 @@
             <div class="grid md:grid-cols-3 gap-8 mt-12">
                 <div class="bg-white rounded-lg p-6 shadow-lg hover:shadow-xl transition-shadow duration-300">
                     <div class="mb-4">
-                        <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg"
-                            xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 512 512" xml:space="preserve"
-                            width="64px" height="64px" fill="#000000">
-                            <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
-                            <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g>
-                            <g id="SVGRepo_iconCarrier">
-                                <path style="fill:#D9894C;"
-                                    d="M61.649,351.085L61.649,351.085c12.695,0,22.988,10.292,22.988,22.988v104.489 c0,12.695-10.292,22.988-22.988,22.988l0,0c-12.695,0-22.988-10.292-22.988-22.988V374.073 C38.661,361.378,48.953,351.085,61.649,351.085z">
-                                </path>
-                                <rect x="285.946" y="411.688" style="fill:#FF5957;" width="215.415" height="89.861"></rect>
-                                <path style="fill:#DB3A3F;"
-                                    d="M501.361,411.689v-34.532c0-16.082-13.037-29.119-29.119-29.119H315.065 c-16.082,0-29.119,13.037-29.119,29.119v34.532H501.361z">
-                                </path>
-                                <path style="fill:#89CD38;"
-                                    d="M213.833,319.125v20.355c0,6.8-4.089,12.934-10.366,15.55l-67.247,28.019 c-14.207,5.92-23.461,22.01-23.461,37.401v81.099h286.379V420.45c0-15.39-9.255-31.482-23.461-37.401L308.43,355.03 c-6.278-2.615-10.366-8.75-10.366-15.55v-20.355H213.833z">
-                                </path>
-                                <path style="fill:#1990E0;"
-                                    d="M353.061,501.55v-96.029c0-10.481,3.555-20.17,9.508-27.933l-54.139-22.557 c-6.278-2.615-10.366-8.75-10.366-15.55l-0.094,37.535c0,23.084-18.886,41.97-41.97,41.97l0,0c-23.084,0-41.97-18.886-41.97-41.97 l-0.195-37.535c0,6.8-4.089,12.934-10.366,15.55l-54.139,22.558c5.953,7.765,9.507,17.452,9.507,27.933v96.029h194.226V501.55z">
-                                </path>
-                                <g>
-                                    <path style="fill:#FEBBA0;"
-                                        d="M349.988,199.158v-30.446c0-51.836-42.021-93.857-93.857-93.857 c-51.836,0-93.857,42.021-93.857,93.857h-0.367v30.446c-12.926,0-23.406,10.479-23.406,23.406 c0,12.926,10.479,23.406,23.406,23.406v17.474c1.126,14.736,8.312,27.856,19.194,35.042l56.58,32.346 c11.361,7.503,25.176,7.503,36.537,0l56.411-32.346c10.88-7.186,18.234-20.305,19.362-35.042v-17.475 c12.926,0,23.406-10.479,23.406-23.406C373.394,209.637,362.915,199.158,349.988,199.158z">
-                                    </path>
-                                    <path style="fill:#FEBBA0;"
-                                        d="M298.063,319.125v57.889c0,23.084-18.98,41.97-42.064,41.97l0,0 c-23.084,0-42.166-18.886-42.166-41.97v-57.889">
-                                    </path>
-                                </g>
-                                <rect x="189.387" y="456.619" style="fill:#0C80D3;" width="133.485" height="44.93"></rect>
-                                <g>
-                                    <path style="fill:#1990E0;"
-                                        d="M347.591,110.565l-10.935-55.184H175.343l-10.935,55.184l-2.848,14.355 c15.305,5.238,30.935,9.178,46.73,11.802c47.383,7.871,96.247,3.931,142.15-11.802L347.591,110.565z">
-                                    </path>
-                                    <path style="fill:#1990E0;"
-                                        d="M387.255,166.248c-63.076,26.127-131.981,32.651-197.967,19.563 c-21.951-4.349-43.575-10.873-64.546-19.563c13.221-13.181,25.504-26.984,36.816-41.329c15.305,5.238,30.935,9.178,46.73,11.802 c47.383,7.871,96.247,3.931,142.15-11.802C361.751,139.264,374.034,153.067,387.255,166.248z">
-                                    </path>
-                                    <path style="fill:#1990E0;"
-                                        d="M407.509,225.024c0,0-6.2-46.031,33.698-56.439c36.049-9.404,37.877,37.108,12.8,37.108 C428.842,205.694,416.39,213.008,407.509,225.024z">
-                                    </path>
-                                    <path style="fill:#1990E0;"
-                                        d="M423.985,264.883c0,0,28.164-36.933,63.736-16.081c32.14,18.84,0.543,53.023-17.189,35.29 C452.74,266.3,438.762,262.667,423.985,264.883z">
-                                    </path>
-                                </g>
-                                <path
-                                    d="M428.355,467.069h-0.137c-5.771,0-10.449-4.678-10.449-10.449c0-5.771,4.678-10.449,10.449-10.449h0.137 c5.771,0,10.449,4.678,10.449,10.449C438.804,462.391,434.126,467.069,428.355,467.069z">
-                                </path>
-                                <path
-                                    d="M294.054,235.473c-6.441,0-11.68-5.239-11.68-11.679c0-6.441,5.239-11.68,11.68-11.68c6.441,0,11.68,5.239,11.68,11.68 C305.734,230.234,300.495,235.473,294.054,235.473z">
-                                </path>
-                                <path
-                                    d="M217.842,235.473c-6.441,0-11.68-5.239-11.68-11.679c0-6.441,5.239-11.68,11.68-11.68s11.68,5.239,11.68,11.68 C229.521,230.234,224.282,235.473,217.842,235.473z">
-                                </path>
-                                <path
-                                    d="M255.992,292.453c-11.391,0-20.66-9.268-20.66-20.66c0-5.771,4.678-10.449,10.449-10.449h20.421 c5.771,0,10.449,4.678,10.449,10.449C276.651,283.185,267.383,292.453,255.992,292.453z">
-                                </path>
-                                <path
-                                    d="M407.509,235.473c-0.864,0-1.736-0.108-2.599-0.328c-4.121-1.058-7.189-4.509-7.757-8.726 c-0.074-0.555-1.785-13.754,2.15-28.419c5.527-20.598,19.106-34.265,39.265-39.525c14.733-3.842,27.753-0.549,35.724,9.036 c7.527,9.051,9.179,22.393,4.112,33.198c-4.532,9.663-13.653,15.433-24.398,15.433c-22.359,0-31.399,6.033-38.095,15.092 C413.912,233.94,410.773,235.473,407.509,235.473z M450.311,177.769c-2.213,0-4.483,0.41-6.467,0.928 c-14.12,3.683-20.762,13.363-23.811,22.808c9.244-4.257,20.372-6.259,33.974-6.259c1.807,0,4.06-0.388,5.477-3.408 c1.615-3.444,1.074-8.157-1.259-10.963C456.287,178.542,453.352,177.769,450.311,177.769z">
-                                </path>
-                                <path
-                                    d="M481.978,299.49c-6.924,0-13.579-2.754-18.833-8.008c-15.809-15.81-26.469-17.938-37.609-16.266 c-4.207,0.634-8.378-1.351-10.544-5.013c-2.166-3.662-1.894-8.272,0.685-11.656c0.34-0.445,8.464-10.988,21.617-18.575 c18.474-10.656,37.738-10.721,55.713-0.184c13.134,7.7,20.013,19.235,18.871,31.651c-1.077,11.723-9.342,22.325-20.568,26.383 C488.212,298.94,485.068,299.489,481.978,299.49z M449.484,257.112c9.543,3.528,18.823,9.979,28.438,19.593 c1.277,1.278,3.147,2.597,6.283,1.464c3.578-1.294,6.529-5.008,6.862-8.642c0.48-5.216-4.428-9.246-8.629-11.709 C471.565,251.442,460.766,251.206,449.484,257.112z">
-                                </path>
-                                <path
-                                    d="M472.242,337.589h-32.155v-23.506c0-5.771-4.678-10.449-10.449-10.449h-71.97c-5.771,0-10.449,4.678-10.449,10.449v23.506 h-32.155c-2.201,0-4.392,0.201-6.553,0.564V323.21l27.312-15.661c0.19-0.109,0.377-0.225,0.561-0.346 c13.676-9.031,22.656-25.093,24.022-42.965c0.021-0.264,0.03-0.531,0.03-0.796v-8.675c13.569-4.414,23.405-17.182,23.405-32.205 c0-15.022-9.836-27.791-23.405-32.205v-3.342c10.394-3.223,20.678-6.916,30.816-11.116c3.227-1.336,5.572-4.197,6.251-7.622 c0.679-3.426-0.399-6.964-2.872-9.43c-12.228-12.192-23.798-25.127-34.441-38.467l-8.282-41.778 c-3.866-19.51-21.109-33.672-40.998-33.672H201.087c-19.89,0-37.132,14.161-40.998,33.672l-8.282,41.778 c-10.644,13.342-22.214,26.278-34.441,38.468c-2.473,2.465-3.551,6.004-2.872,9.429c0.678,3.426,3.024,6.286,6.25,7.622 c10.048,4.163,20.312,7.847,30.716,11.07v3.389c-13.569,4.414-23.405,17.182-23.405,32.205c0,15.022,9.836,27.791,23.405,32.205 v8.675c0,0.265,0.01,0.532,0.03,0.796c1.372,17.945,10.289,34.006,23.854,42.965c0.187,0.123,0.378,0.24,0.573,0.352l27.469,15.704 v16.221c0,2.59-1.545,4.908-3.936,5.905l-67.248,28.02c-17.599,7.334-29.89,26.679-29.89,47.045v70.65h-9.673 c1.574-3.874,2.448-8.105,2.448-12.539V374.073c0-14.783-9.648-27.348-22.974-31.751v-31.987h1.615 c5.771,0,10.449-4.678,10.449-10.449s-4.678-10.449-10.449-10.449h-1.615v-18.808h1.615c5.771,0,10.449-4.678,10.449-10.449 c0-5.771-4.678-10.449-10.449-10.449h-1.615v-18.808h1.615c5.771,0,10.449-4.678,10.449-10.449s-4.678-10.449-10.449-10.449h-1.615 v-18.808h1.615c5.771,0,10.449-4.678,10.449-10.449c0-5.771-4.678-10.449-10.449-10.449h-1.615v-18.808h1.615 c5.771,0,10.449-4.678,10.449-10.449c0-5.771-4.678-10.449-10.449-10.449h-1.615v-18.808h1.615c5.771,0,10.449-4.678,10.449-10.449 s-4.678-10.449-10.449-10.449h-1.615V78.368c0-5.771-4.678-10.449-10.449-10.449s-10.449,4.678-10.449,10.449v263.944 c-13.341,4.395-23.001,16.967-23.001,31.761v104.489c0,4.434,0.875,8.664,2.448,12.539H10.449C4.678,491.101,0,495.779,0,501.55 c0,5.771,4.678,10.449,10.449,10.449h312.423h76.266h102.223c0.329,0,0.598-0.016,0.825-0.042c5.383-0.422,9.623-4.915,9.623-10.407 V377.157C511.81,355.339,494.059,337.589,472.242,337.589z M49.11,374.073c0-6.914,5.625-12.539,12.539-12.539 c3.964,0,7.499,1.855,9.798,4.736L49.11,382.323V374.073z M74.187,478.563c0,6.914-5.625,12.539-12.539,12.539 c-3.855,0-7.306-1.751-9.608-4.497l22.147-15.915V478.563z M74.187,444.955L49.11,462.976v-14.592l25.077-18.021V444.955z M74.187,404.627L49.11,422.649v-14.593l25.077-18.021V404.627z M368.117,324.533h51.072v13.057h-51.072V324.533z M180.588,82.666 c1.933-9.755,10.554-16.836,20.5-16.836h109.825c9.945,0,18.567,7.08,20.5,16.836l6.972,35.178 c-41.43,12.701-85.617,15.674-128.382,8.569c-12.243-2.034-24.441-4.922-36.382-8.583L180.588,82.666z M143.225,162.201 c7.632-8.133,14.975-16.525,21.955-25.094c13.561,4.275,27.451,7.606,41.396,9.922c46.742,7.766,95.064,4.328,140.242-9.92 c6.98,8.568,14.323,16.961,21.957,25.095c-56.872,20.535-117.89,25.17-177.457,13.356 C175.019,172.33,158.901,167.851,143.225,162.201z M172.356,263.022v-17.054c0-5.771-4.678-10.449-10.449-10.449 c-7.144,0-12.956-5.813-12.956-12.956c0-7.143,5.813-12.956,12.956-12.956c5.771,0,10.449-4.678,10.449-10.449v-6.41 c4.948,1.206,9.913,2.324,14.899,3.311c22.875,4.537,45.942,6.791,68.94,6.791c28.069,0,56.02-3.38,83.345-10.049v6.356 c0,5.771,4.678,10.449,10.449,10.449c7.144,0,12.956,5.813,12.956,12.956c0,7.143-5.813,12.956-12.956,12.956 c-5.771,0-10.449,4.678-10.449,10.449v17.052c-0.949,11.049-6.443,21.175-14.42,26.577l-56.1,32.168 c-0.191,0.11-0.377,0.225-0.561,0.346c-7.831,5.173-17.185,5.174-25.02,0c-0.187-0.123-0.377-0.241-0.573-0.352l-56.263-32.165 C178.617,284.186,173.318,274.3,172.356,263.022z M232.22,339.744c7.335,4.764,15.531,7.145,23.727,7.145 c8.199,0,16.399-2.383,23.734-7.149l7.932-4.548v41.822c0,17.381-14.182,31.521-31.615,31.521 c-17.488,0-31.717-14.141-31.717-31.521v-41.808L232.22,339.744z M148.386,491.101h-25.179v-70.65 c0-11.777,7.322-23.71,17.031-27.755l4.87-2.029c2.154,4.628,3.277,9.657,3.277,14.856v85.579H148.386z M312.423,491.101H199.84 v-24.033h112.583V491.101z M342.612,405.521v85.58h-9.291V456.62c0-5.771-4.678-10.449-10.449-10.449H189.391 c-5.771,0-10.449,4.678-10.449,10.449v34.482h-9.658v-85.58c0-8.004-1.667-15.748-4.869-22.9l38.969-16.237v10.63 c0,28.904,23.603,52.419,52.615,52.419c28.956,0,52.513-23.515,52.513-52.419v-10.63l38.969,16.237 C344.279,389.774,342.612,397.517,342.612,405.521z M388.689,491.101H363.51v-85.58c0-5.199,1.123-10.227,3.278-14.856l4.871,2.029 c9.709,4.046,17.031,15.978,17.031,27.756v70.652H388.689z M490.912,401.24h-66.926c-5.771,0-10.449,4.678-10.449,10.449 s4.678,10.449,10.449,10.449h66.926v24.033H462.16c-5.771,0-10.449,4.678-10.449,10.449c0,5.771,4.678,10.449,10.449,10.449h28.752 v24.033h-81.325v-70.65c0-20.367-12.292-39.713-29.891-47.046l-35.802-14.917h128.348c10.295,0,18.67,8.376,18.67,18.67 L490.912,401.24L490.912,401.24z">
-                                </path>
-                                <path
-                                    d="M127.408,355.279c-17.849,0-32.369-14.52-32.369-32.369V32.37c0-6.325-5.146-11.471-11.471-11.471 c-6.325,0-11.471,5.146-11.471,11.471v13.084c0,5.771-4.678,10.449-10.449,10.449S51.2,51.225,51.2,45.454V32.37 c0-17.849,14.52-32.369,32.369-32.369s32.369,14.52,32.369,32.369v290.541c0,6.325,5.146,11.471,11.471,11.471 s11.471-5.146,11.471-11.471c0-5.771,4.678-10.449,10.449-10.449c5.771,0,10.449,4.678,10.449,10.449 C159.777,340.759,145.256,355.279,127.408,355.279z">
-                                </path>
-                            </g>
-                        </svg>
+
                     </div>
                     <h3 class="text-xl font-semibold mb-2">Experiencia</h3>
                     <p class="text-gray-600">Años de experiencia en pesca local y conocimiento del área.</p>
@@ -191,211 +253,7 @@
 
                 <div class="bg-white rounded-lg p-6 shadow-lg hover:shadow-xl transition-shadow duration-300">
                     <div class="text-blue-500 mb-4">
-                        <svg height="64px" width="64px" version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg"
-                            xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 512 512" xml:space="preserve"
-                            fill="#000000">
-                            <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
-                            <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g>
-                            <g id="SVGRepo_iconCarrier">
-                                <g transform="translate(1 1)">
-                                    <path style="fill:#FFDD09;"
-                                        d="M474.307,468.333H35.693c-15.36,0-28.16-12.8-28.16-28.16V172.227c0-15.36,12.8-28.16,28.16-28.16 h438.613c15.36,0,28.16,12.8,28.16,28.16v267.947C502.467,455.533,489.667,468.333,474.307,468.333">
-                                    </path>
-                                    <path style="fill:#FCC309;"
-                                        d="M502.467,229.4H7.533v-57.173c0-15.36,12.8-28.16,28.16-28.16h438.613 c15.36,0,28.16,12.8,28.16,28.16V229.4z">
-                                    </path>
-                                    <path style="fill:#FD9808;"
-                                        d="M474.307,144.067h-25.6c15.36,0,28.16,12.8,28.16,28.16v267.947c0,15.36-12.8,28.16-28.16,28.16 h25.6c15.36,0,28.16-12.8,28.16-28.16V172.227C502.467,156.867,489.667,144.067,474.307,144.067">
-                                    </path>
-                                    <path style="fill:#FFFFFF;"
-                                        d="M35.693,144.067h25.6c-15.36,0-28.16,12.8-28.16,28.16v267.947c0,15.36,12.8,28.16,28.16,28.16 h-25.6c-15.36,0-28.16-12.8-28.16-28.16V172.227C7.533,156.867,20.333,144.067,35.693,144.067">
-                                    </path>
-                                    <g>
-                                        <polygon style="fill:#FFDD09;"
-                                            points="144.067,144.067 212.333,144.067 212.333,109.933 144.067,109.933 ">
-                                        </polygon>
-                                        <polygon style="fill:#FFDD09;"
-                                            points="297.667,144.067 365.933,144.067 365.933,109.933 297.667,109.933 ">
-                                        </polygon>
-                                    </g>
-                                    <polygon style="fill:#FD9808;"
-                                        points="340.333,144.067 365.933,144.067 365.933,109.933 340.333,109.933 "></polygon>
-                                    <path style="fill:#FFDD09;"
-                                        d="M314.733,87.747v22.187h34.133v-17.92c0-28.16-22.187-50.347-50.347-50.347h-87.04 c-28.16,0-50.347,22.187-50.347,50.347v17.92h34.133V87.747c0-9.387,9.387-16.213,18.773-11.947 c26.453,11.093,56.32,11.093,82.773,0C305.347,72.387,314.733,78.36,314.733,87.747">
-                                    </path>
-                                    <path style="fill:#54C9FD;"
-                                        d="M346.307,417.133H163.693c-5.973,0-11.093-5.12-11.093-11.093v-79.36 c0-5.973,5.12-11.093,11.093-11.093h181.76c5.973,0,11.093,5.12,11.093,11.093v79.36C357.4,412.013,352.28,417.133,346.307,417.133 ">
-                                    </path>
-                                    <path style="fill:#33A9F8;"
-                                        d="M346.307,314.733h-25.6c5.973,0,11.093,5.12,11.093,11.093v79.36c0,5.973-5.12,11.093-11.093,11.093 h25.6c5.973,0,11.093-5.12,11.093-11.093v-79.36C357.4,319.853,352.28,314.733,346.307,314.733">
-                                    </path>
-                                    <g>
-                                        <polygon style="fill:#1CD759;"
-                                            points="237.933,417.133 340.333,314.733 272.067,314.733 169.667,417.133 ">
-                                        </polygon>
-                                        <path style="fill:#1CD759;"
-                                            d="M147.48,272.067h-40.96c-7.68,0-13.653-5.973-13.653-13.653v-58.027 c0-7.68,5.973-13.653,13.653-13.653h40.96c7.68,0,13.653,5.973,13.653,13.653v58.027 C161.133,266.093,155.16,272.067,147.48,272.067">
-                                        </path>
-                                        <path style="fill:#1CD759;"
-                                            d="M403.48,272.067h-40.96c-7.68,0-13.653-5.973-13.653-13.653v-58.027 c0-7.68,5.973-13.653,13.653-13.653h40.96c7.68,0,13.653,5.973,13.653,13.653v58.027 C417.133,266.093,411.16,272.067,403.48,272.067">
-                                        </path>
-                                    </g>
-                                    <g>
-                                        <path style="fill:#15A143;"
-                                            d="M403.48,186.733h-25.6c7.68,0,13.653,5.973,13.653,13.653v58.027 c0,7.68-5.973,13.653-13.653,13.653h25.6c7.68,0,13.653-5.973,13.653-13.653v-58.027 C417.133,192.707,411.16,186.733,403.48,186.733">
-                                        </path>
-                                        <path style="fill:#15A143;"
-                                            d="M147.48,186.733h-25.6c7.68,0,13.653,5.973,13.653,13.653v58.027 c0,7.68-5.973,13.653-13.653,13.653h25.6c7.68,0,13.653-5.973,13.653-13.653v-58.027 C161.133,192.707,155.16,186.733,147.48,186.733">
-                                        </path>
-                                    </g>
-                                    <path
-                                        d="M474.307,476.867H35.693C15.213,476.867-1,460.653-1,440.173V172.227c0-20.48,16.213-36.693,36.693-36.693h438.613 c20.48,0,36.693,16.213,36.693,36.693v267.947C511,460.653,494.787,476.867,474.307,476.867z M35.693,152.6 c-11.093,0-19.627,8.533-19.627,19.627v267.947c0,11.093,8.533,19.627,19.627,19.627h438.613c11.093,0,19.627-8.533,19.627-19.627 V172.227c0-11.093-8.533-19.627-19.627-19.627H35.693z">
-                                    </path>
-                                    <path
-                                        d="M220.867,152.6h-85.333v-51.2h85.333V152.6z M152.6,135.533h51.2v-17.067h-51.2V135.533z">
-                                    </path>
-                                    <path
-                                        d="M374.467,152.6h-85.333v-51.2h85.333V152.6z M306.2,135.533h51.2v-17.067h-51.2V135.533z">
-                                    </path>
-                                    <path
-                                        d="M203.8,87.747v30.72h-51.2V92.013c0-32.427,26.453-58.88,58.88-58.88h87.04c32.427,0,58.88,26.453,58.88,58.88v26.453 h-51.2v-30.72c0-1.707-1.707-3.413-1.707-3.413c-0.853,0-2.56-1.707-4.267-0.853c-29.013,11.947-68.267,9.387-96.427-2.56 M323.267,101.4h17.067v-9.387c0-23.04-18.773-41.813-41.813-41.813h-87.04c-23.04,0-41.813,18.773-41.813,41.813v9.387h17.067 V87.747c0-7.68,3.413-14.507,9.387-17.92c5.973-4.267,13.653-5.12,20.48-1.707c24.747,10.24,51.2,10.24,75.947,0 c6.827-2.56,14.507-1.707,20.48,1.707c6.827,4.267,10.24,11.093,10.24,17.92V101.4z">
-                                    </path>
-                                    <path
-                                        d="M511,237.933H-1v-65.707c0-20.48,16.213-36.693,36.693-36.693h438.613c20.48,0,36.693,16.213,36.693,36.693V237.933z M16.067,220.867h477.867v-48.64c0-11.093-8.533-19.627-19.627-19.627H35.693c-11.093,0-19.627,8.533-19.627,19.627V220.867z">
-                                    </path>
-                                    <path
-                                        d="M147.48,280.6h-40.96c-11.947,0-22.187-10.24-22.187-22.187v-58.027c0-11.947,10.24-22.187,22.187-22.187h40.96 c11.947,0,22.187,10.24,22.187,22.187v58.027C169.667,270.36,159.427,280.6,147.48,280.6z M106.52,195.267 c-2.56,0-5.12,2.56-5.12,5.12v58.027c0,2.56,2.56,5.12,5.12,5.12h40.96c2.56,0,5.12-2.56,5.12-5.12v-58.027 c0-2.56-2.56-5.12-5.12-5.12C147.48,195.267,106.52,195.267,106.52,195.267z">
-                                    </path>
-                                    <path
-                                        d="M403.48,280.6h-40.96c-11.947,0-22.187-10.24-22.187-22.187v-58.027c0-11.947,10.24-22.187,22.187-22.187h40.96 c11.947,0,22.187,10.24,22.187,22.187v58.027C425.667,270.36,415.427,280.6,403.48,280.6z M362.52,195.267 c-2.56,0-5.12,2.56-5.12,5.12v58.027c0,2.56,2.56,5.12,5.12,5.12h40.96c2.56,0,5.12-2.56,5.12-5.12v-58.027 c0-2.56-2.56-5.12-5.12-5.12C403.48,195.267,362.52,195.267,362.52,195.267z">
-                                    </path>
-                                    <path
-                                        d="M346.307,425.667H163.693c-11.093,0-19.627-9.387-19.627-19.627v-79.36c0-11.093,9.387-19.627,19.627-19.627h181.76 c11.093,0,19.627,9.387,19.627,19.627v79.36C365.933,416.28,356.547,425.667,346.307,425.667z M163.693,323.267 c-1.707,0-2.56,1.707-2.56,2.56v79.36c0,1.707,1.707,2.56,2.56,2.56h181.76c1.707,0,2.56-1.707,2.56-2.56v-79.36 c0-1.707-1.707-2.56-2.56-2.56H163.693z">
-                                    </path>
-                                    <path
-                                        d="M237.933,425.667h-68.267c-3.413,0-6.827-1.707-7.68-5.12c-0.853-3.413-0.853-6.827,1.707-9.387l102.4-102.4 c1.707-1.707,3.413-2.56,5.973-2.56h68.267c3.413,0,6.827,1.707,7.68,5.12c1.707,3.413,0.853,6.827-1.707,9.387l-102.4,102.4 C242.2,424.813,240.493,425.667,237.933,425.667z M190.147,408.6h44.373l85.333-85.333H275.48L190.147,408.6z">
-                                    </path>
-                                    <path
-                                        d="M195.267,374.467c0-5.12,3.413-8.533,8.533-8.533c5.12,0,8.533,3.413,8.533,8.533c0,5.12-3.413,8.533-8.533,8.533 C198.68,383,195.267,379.587,195.267,374.467">
-                                    </path>
-                                    <path
-                                        d="M152.6,374.467c0-5.12,3.413-8.533,8.533-8.533c5.12,0,8.533,3.413,8.533,8.533c0,5.12-3.413,8.533-8.533,8.533 C156.013,383,152.6,379.587,152.6,374.467">
-                                    </path>
-                                    <path
-                                        d="M203.8,323.267c0-5.12,3.413-8.533,8.533-8.533c5.12,0,8.533,3.413,8.533,8.533c0,5.12-3.413,8.533-8.533,8.533 C207.213,331.8,203.8,328.387,203.8,323.267">
-                                    </path>
-                                    <path
-                                        d="M152.6,323.267c0-5.12,3.413-8.533,8.533-8.533c5.12,0,8.533,3.413,8.533,8.533c0,5.12-3.413,8.533-8.533,8.533 C156.013,331.8,152.6,328.387,152.6,323.267">
-                                    </path>
-                                    <path
-                                        d="M178.2,348.867c0-5.12,3.413-8.533,8.533-8.533c5.12,0,8.533,3.413,8.533,8.533c0,5.12-3.413,8.533-8.533,8.533 C181.613,357.4,178.2,353.987,178.2,348.867">
-                                    </path>
-                                    <path
-                                        d="M220.867,348.867c0-5.12,3.413-8.533,8.533-8.533c5.12,0,8.533,3.413,8.533,8.533c0,5.12-3.413,8.533-8.533,8.533 C224.28,357.4,220.867,353.987,220.867,348.867">
-                                    </path>
-                                    <path
-                                        d="M314.733,357.4c0,5.12-3.413,8.533-8.533,8.533s-8.533-3.413-8.533-8.533s3.413-8.533,8.533-8.533 S314.733,352.28,314.733,357.4">
-                                    </path>
-                                    <path
-                                        d="M357.4,357.4c0,5.12-3.413,8.533-8.533,8.533c-5.12,0-8.533-3.413-8.533-8.533s3.413-8.533,8.533-8.533 C353.987,348.867,357.4,352.28,357.4,357.4">
-                                    </path>
-                                    <path
-                                        d="M306.2,408.6c0,5.12-3.413,8.533-8.533,8.533s-8.533-3.413-8.533-8.533c0-5.12,3.413-8.533,8.533-8.533 S306.2,403.48,306.2,408.6">
-                                    </path>
-                                    <path
-                                        d="M357.4,408.6c0,5.12-3.413,8.533-8.533,8.533c-5.12,0-8.533-3.413-8.533-8.533c0-5.12,3.413-8.533,8.533-8.533 C353.987,400.067,357.4,403.48,357.4,408.6">
-                                    </path>
-                                    <path
-                                        d="M331.8,383c0,5.12-3.413,8.533-8.533,8.533c-5.12,0-8.533-3.413-8.533-8.533c0-5.12,3.413-8.533,8.533-8.533 C328.387,374.467,331.8,377.88,331.8,383">
-                                    </path>
-                                    <path
-                                        d="M289.133,383c0,5.12-3.413,8.533-8.533,8.533s-8.533-3.413-8.533-8.533c0-5.12,3.413-8.533,8.533-8.533 S289.133,377.88,289.133,383">
-                                    </path>
-                                </g>
-                            </g>
-                        </svg>
-                    </div>
-                    <h3 class="text-xl font-semibold mb-2">Calidad</h3>
-                    <p class="text-gray-600">Productos seleccionados de las mejores marcas del mercado.</p>
-                </div>
 
-                <div class="bg-white rounded-lg p-6 shadow-lg hover:shadow-xl transition-shadow duration-300">
-                    <div class="text-blue-500 mb-4">
-                        <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg"
-                            xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 512 512" xml:space="preserve"
-                            width="80px" height="80px" fill="#000000">
-                            <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
-                            <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g>
-                            <g id="SVGRepo_iconCarrier">
-                                <path style="fill:#FF6465;"
-                                    d="M153.517,221.918H141.5v90.71h102.727l0,0C244.227,262.53,203.615,221.918,153.517,221.918z">
-                                </path>
-                                <path style="fill:#C89173;"
-                                    d="M80.369,329.319L80.369,329.319c0,43.154,34.983,78.139,78.139,78.139h131.746 c43.154,0,78.139-34.983,78.139-78.139l0,0H80.369z">
-                                </path>
-                                <path style="opacity:0.1;enable-background:new ;"
-                                    d="M112.85,329.319L112.85,329.319h-32.48l0,0 c0,43.154,34.983,78.139,78.139,78.139h32.48C147.833,407.458,112.85,372.475,112.85,329.319z">
-                                </path>
-                                <path style="opacity:0.1;enable-background:new ;"
-                                    d="M80.369,329.319c0,16.214,4.94,31.274,13.396,43.76h261.233 c8.456-12.485,13.396-27.545,13.396-43.76l0,0H80.369L80.369,329.319z">
-                                </path>
-                                <rect x="59.688" y="312.623" style="fill:#E0A381;" width="329.394" height="33.384">
-                                </rect>
-                                <rect x="59.688" y="312.623" style="opacity:0.1;enable-background:new ;" width="32.48"
-                                    height="33.384"></rect>
-                                <path style="opacity:0.1;enable-background:new ;"
-                                    d="M174.382,277.524c19.693,0,37.575-7.856,50.715-20.581 c-16.599-21.306-42.479-35.026-71.58-35.026H141.5v47.745C151.389,274.678,162.556,277.524,174.382,277.524z">
-                                </path>
-                                <path style="fill:#F0C19C;"
-                                    d="M220.278,204.56c0,25.348-20.548,45.897-45.897,45.897s-45.897-20.548-45.897-45.897v-33.672 l45.896-25.736l45.897,25.736v33.672H220.278z">
-                                </path>
-                                <path style="opacity:0.1;enable-background:new ;"
-                                    d="M142.56,204.56v-33.672l38.858-21.791l-7.037-3.946l-45.896,25.736v33.672 c0,25.348,20.548,45.897,45.897,45.897c2.393,0,4.743-0.184,7.037-0.537C159.412,246.533,142.56,227.515,142.56,204.56z">
-                                </path>
-                                <path style="fill:#FF6465;"
-                                    d="M217.721,130.412c-5.425-12.016-20.465-16.098-31.221-8.475l0,0c-7.26,5.145-16.977,5.145-24.237,0 c-10.756-7.622-25.796-3.54-31.221,8.475l-19.655,43.529h125.988L217.721,130.412z">
-                                </path>
-                                <g style="opacity:0.1;">
-                                    <path
-                                        d="M160.964,121.092c-10.635-6.437-24.711-2.221-29.922,9.32l-19.655,43.529h21.654l19.655-43.529 C154.53,126.348,157.468,123.196,160.964,121.092z">
-                                    </path>
-                                </g>
-                                <path style="fill:#C89173;"
-                                    d="M265.977,315.963c-4.422,0-8.826-1.794-12.032-5.327c-6.027-6.642-5.529-16.913,1.112-22.94 L452.234,108.76c6.642-6.028,16.913-5.529,22.94,1.112c6.027,6.642,5.529,16.912-1.112,22.94L276.886,311.749 C273.776,314.571,269.869,315.963,265.977,315.963z">
-                                </path>
-                                <path style="fill:#E0A381;"
-                                    d="M268.05,296.358l197.176-178.937c3.483-3.161,7.963-4.51,12.307-4.137 c-0.629-1.206-1.403-2.358-2.36-3.413c-6.026-6.641-16.298-7.141-22.94-1.112L255.058,287.697c-6.642,6.026-7.14,16.298-1.112,22.94 c2.867,3.16,6.695,4.918,10.636,5.255C261.241,309.501,262.46,301.431,268.05,296.358z">
-                                </path>
-                                <path style="fill:#7DD2F0;"
-                                    d="M244.227,278.07h-42.738l-35.356-35.356c-8.457-8.457-22.167-8.457-30.622,0 c-8.457,8.456-8.457,22.167,0,30.624l41.698,41.698c4.06,4.06,9.569,6.341,15.311,6.341h51.708l11.966-21.654L244.227,278.07z">
-                                </path>
-                                <path style="fill:#F0C19C;"
-                                    d="M266.065,278.07h-21.838v43.307h21.838c11.959,0,21.654-9.694,21.654-21.654 C287.718,287.764,278.023,278.07,266.065,278.07z">
-                                </path>
-                                <g>
-                                    <path style="fill:#5A4146;"
-                                        d="M111.387,173.94v42.521l0,0c13.44,0,24.336-10.896,24.336-24.336V173.94H111.387z">
-                                    </path>
-                                    <path style="fill:#5A4146;"
-                                        d="M237.377,173.94v42.521l0,0c-13.44,0-24.336-10.896-24.336-24.336V173.94H237.377z">
-                                    </path>
-                                </g>
-                                <path style="opacity:0.1;enable-background:new ;"
-                                    d="M103.913,173.94c0-4.484,3.636-8.12,8.12-8.12H90.38 c-4.484,0-8.12,3.636-8.12,8.12s3.636,8.12,8.12,8.12h21.654C107.549,182.06,103.913,178.424,103.913,173.94z">
-                                </path>
-                                <path
-                                    d="M503.88,399.338h-20.587V134.447c2.496-3.665,3.966-7.941,4.186-12.482c0.315-6.499-1.92-12.732-6.293-17.55 c-4.373-4.818-10.36-7.647-16.859-7.962c-6.501-0.326-12.733,1.919-17.55,6.294L262.532,269.949h-18.306h-1.581 c-6.013-12.547-14.591-23.651-25.213-32.66c3.403-4.482,6.126-9.525,8.006-14.992c3.698,1.468,7.724,2.284,11.939,2.284 c4.484,0,8.12-3.635,8.12-8.12V182.06h12.887c4.486,0,8.12-3.635,8.12-8.12s-3.635-8.12-8.12-8.12h-15.766l-17.497-38.75 c-4.696-10.398-15.113-17.118-26.539-17.118c-6.028,0-11.83,1.854-16.778,5.359c-2.183,1.546-4.75,2.363-7.423,2.363 c-2.675,0-5.241-0.817-7.424-2.363c-4.948-3.506-10.749-5.359-16.778-5.359c-11.425,0-21.843,6.719-26.539,17.118l-17.497,38.75 H90.38c-4.484,0-8.12,3.635-8.12,8.12s3.636,8.12,8.12,8.12h12.887v34.401c0,4.486,3.636,8.12,8.12,8.12 c4.23,0,8.269-0.822,11.979-2.301c1.723,4.95,4.159,9.631,7.24,13.893c-0.283,0.262-0.564,0.524-0.838,0.798 c-5.623,5.623-8.721,13.101-8.721,21.054c0,7.952,3.096,15.43,8.721,21.054l3.612,3.612v21.816h-19.53 c-4.484,0-8.12,3.635-8.12,8.12s3.636,8.12,8.12,8.12h27.65h29.937l0.029,0.029c5.625,5.622,13.101,8.72,21.053,8.72h51.706h21.838 c0.494,0,0.986-0.013,1.478-0.038c7.631-0.375,14.515-3.636,19.583-8.711h93.83v17.144h-14.368H82.174H67.806v-17.144h13.853 c4.484,0,8.12-3.635,8.12-8.12s-3.636-8.12-8.12-8.12H59.686c-4.484,0-8.12,3.635-8.12,8.12v33.384c0,4.486,3.636,8.12,8.12,8.12 h16.221c4.935,16.398,14.758,31.159,28.136,42.07c1.341,1.095,2.725,2.13,4.126,3.137H73.146c-4.484,0-8.12,3.635-8.12,8.12 s3.636,8.12,8.12,8.12h85.363h131.746h89.525c4.486,0,8.12-3.635,8.12-8.12s-3.635-8.12-8.12-8.12h-39.186 c1.401-1.007,2.784-2.043,4.126-3.137c13.376-10.91,23.201-25.672,28.135-42.07h16.221c4.486,0,8.12-3.635,8.12-8.12v-33.384 c0-4.486-3.635-8.12-8.12-8.12h-92.128L398.97,211.92c3.321-3.013,3.571-8.148,0.556-11.47c-3.014-3.322-8.149-3.572-11.47-0.557 l-95.355,86.534c-0.043-0.087-0.094-0.169-0.139-0.254c-2.428-4.729-6.099-8.746-10.584-11.597c-0.075-0.048-0.145-0.101-0.22-0.147 l175.933-159.659c1.606-1.458,3.696-2.201,5.849-2.098c2.166,0.105,4.162,1.048,5.619,2.654c1.457,1.606,2.202,3.683,2.098,5.85 c-0.106,2.166-1.048,4.163-2.654,5.62l-56.444,51.223c-3.321,3.013-3.571,8.148-0.556,11.47c3.014,3.322,8.147,3.572,11.47,0.557 l43.979-39.911v249.203h-36.18c-4.486,0-8.12,3.635-8.12,8.12s3.635,8.12,8.12,8.12h73.007c4.486,0,8.12-3.635,8.12-8.12 S508.364,399.338,503.88,399.338z M290.253,399.338H158.507c-29.218,0-55.303-18.498-65.471-45.207h262.688 C345.556,380.841,319.472,399.338,290.253,399.338z M224.227,269.949h-19.376l-13.939-13.939c5.335-1.7,10.312-4.201,14.787-7.374 C213.082,254.657,219.337,261.859,224.227,269.949z M229.257,206.157c0-0.189-2.721-1.992-3.083-2.345 c-3.049-2.97-5.013-7.331-5.013-11.689v-10.065h8.096C229.257,182.06,229.257,206.156,229.257,206.157z M138.443,133.753 c2.074-4.593,6.681-7.56,11.737-7.56c2.645,0,5.2,0.82,7.388,2.369c4.942,3.502,10.756,5.353,16.814,5.353 c6.058,0,11.87-1.85,16.813-5.353c2.188-1.55,4.742-2.369,7.388-2.369c5.056,0,9.663,2.968,11.737,7.561l14.48,32.066h-11.759 h-77.316h-11.76L138.443,133.753z M119.507,182.06h8.096v10.065c0,5.676-3.192,11.185-8.096,14.034V182.06z M137.285,211.691 c4.215-5.556,6.56-12.593,6.56-19.566V182.06h61.076v10.065c0,5.535,1.485,11.057,4.183,15.884c0.333,0.595,2.499,3.088,2.384,3.694 c-1.509,7.974-5.474,14.982-11.052,20.279c-0.149,0.119-0.31,0.219-0.451,0.35c-6.228,5.747-14.401,9.288-22.853,9.897l-5.256-5.256 c-5.623-5.622-13.1-8.72-21.053-8.72c-1.845,0-3.662,0.173-5.438,0.5C141.279,223.836,138.487,217.964,137.285,211.691z M149.619,304.506v-5.577l5.577,5.577H149.619z M191.176,313.183c-4.248-0.464-7.867-3.082-10.633-6.298 c0,0-33.301-33.301-33.304-33.304c-4.494-4.494-9.95-8.596-9.95-15.556c0-5.468,3.431-10.536,8.506-12.566 c0.014-0.005,0.029-0.008,0.043-0.014c4.393-1.734,9.492-1.024,13.229,1.861c3.296,2.544,6.111,5.934,9.056,8.879l27.626,27.626 c1.522,1.522,3.588,2.378,5.741,2.378h34.618v27.067H192.52C192.065,313.256,191.616,313.231,191.176,313.183z M252.346,313.256 v-27.067h13.32h0.397c7.463,0,13.533,6.071,13.533,13.533c0,7.326-6.193,13.533-13.533,13.533H252.346z">
-                                </path>
-                                <path
-                                    d="M38.54,399.338H8.12c-4.484,0-8.12,3.635-8.12,8.12s3.636,8.12,8.12,8.12h30.42c4.484,0,8.12-3.635,8.12-8.12 S43.024,399.338,38.54,399.338z">
-                                </path>
-                                <circle cx="154.108" cy="193.724" r="6.25"></circle>
-                                <circle cx="194.654" cy="193.724" r="6.25"></circle>
-                                <path
-                                    d="M155.434,217.957c4.052,4.71,11.136,7.52,18.947,7.52c7.809,0,14.891-2.811,18.945-7.518 c2.926-3.4,2.543-8.526-0.855-11.451c-3.4-2.928-8.526-2.543-11.451,0.855c-0.506,0.588-2.879,1.874-6.638,1.874 c-3.759,0-6.132-1.286-6.638-1.874c-2.925-3.4-8.053-3.784-11.451-0.857C152.893,209.431,152.509,214.558,155.434,217.957z">
-                                </path>
-                            </g>
-                        </svg>
                     </div>
                     <h3 class="text-xl font-semibold mb-2">Comunidad</h3>
                     <p class="text-gray-600">Parte activa de la comunidad de pescadores locales.</p>

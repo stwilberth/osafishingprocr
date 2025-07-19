@@ -101,52 +101,152 @@
         target="_blank">
         <i class="fab fa-whatsapp"></i>
     </a>
-    {{-- footer --}}
-    <footer class="bg-gradient-to-b from-blue-50 to-blue-100 border-t border-blue-200">
-        <div class="max-w-7xl mx-auto px-4 py-6">
-            <div class="flex flex-col md:flex-row justify-between items-center gap-4">
-                <!-- Logo y copyright -->
-                <div class="flex items-center gap-2">
-                    <img src="{{ asset('images/osa_transparent_circle.png') }}" alt="Logo" class="w-10 h-10">
-                    <p class="text-gray-600 text-sm">
-                        © {{ date('Y') }} Osa Fishing Pro CR.
-                        <span class="block md:inline">Todos los derechos reservados.</span>
+    <footer class="bg-gray-800 text-gray-800 border-t-4 border-blue-300">
+        <!-- Sección principal del footer -->
+        <div class="max-w-7xl mx-auto px-4 py-12">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+                
+                <!-- Información de la empresa -->
+                <div class="space-y-4">
+                    <div class="flex items-center space-x-3">
+                        <img src="{{ asset('images/osa_transparent_circle.png') }}" alt="Osa Fishing Pro CR" class="w-12 h-12">
+                        <div>
+                            <h3 class="text-xl font-bold text-blue-800">Osa Fishing Pro CR</h3>
+                            <p class="text-sm text-gray-600">Tu tienda de confianza para equipos de pesca</p>
+                        </div>
+                    </div>
+                    <p class="text-gray-700 text-sm leading-relaxed">
+                        Especialistas en equipos de pesca deportiva y de consumo para la zona sur de Costa Rica. 
+                        Productos de calidad seleccionados para pescadores locales.
                     </p>
+                    <div class="flex space-x-4">
+                        <a href="https://wa.me/60283248" target="_blank" class="text-green-600 hover:text-green-700 transition-colors">
+                            <i class="fab fa-whatsapp text-xl"></i>
+                        </a>
+                        <a href="tel:60283248" class="text-blue-600 hover:text-blue-700 transition-colors">
+                            <i class="fas fa-phone text-xl"></i>
+                        </a>
+                        <a href="https://www.facebook.com/osafishingpro" target="_blank" class="text-blue-600 hover:text-blue-700 transition-colors">
+                            <i class="fab fa-facebook text-xl"></i>
+                        </a>
+                        <a href="https://www.instagram.com/osafishingpro" target="_blank" class="text-pink-600 hover:text-pink-700 transition-colors">
+                            <i class="fab fa-instagram text-xl"></i>
+                        </a>
+                    </div>
                 </div>
 
-                <!-- Enlaces sociales -->
-                <div class="flex gap-4">
-                    <!-- whatsapp -->
-                    <a href="https://wa.me/60283248" target="_blank" class="text-green-500"><i class="fab fa-whatsapp"></i></a>
-                    <!-- phone -->
-                    <a href="tel:60283248" class="text-blue-500"><i class="fas fa-phone "></i></a>
-                    <!-- facebook -->
-                    <a href="https://www.facebook.com/OsaFishingProo" target="_blank" class="text-blue-500"><i class="fab fa-facebook"></i></a>
-                    <!-- instagram -->
-{{--                     <a href="https://www.instagram.com/osafishingpro" target="_blank" class="text-purple-500"><i class="fab fa-instagram"></i></a>
-                    <!-- twitter -->
-                    <a href="https://www.twitter.com/osafishingpro" target="_blank" class="text-blue-500"><i class="fab fa-twitter"></i></a>
-                    <!-- youtube -->
-                    <a href="https://www.youtube.com/osafishingpro" target="_blank" class="text-red-500"><i class="fab fa-youtube"></i></a>
- --}}                    <!-- tiktok -->
-                    <a href="https://www.tiktok.com/@osafishingpro" target="_blank" class="text-pink-500"><i class="fab fa-tiktok"></i></a>
-                    <!-- google maps -->
-                    <a href="https://maps.app.goo.gl/NhfuqEpCLwxTCPQK7" target="_blank" class="text-green-500"><i class="fas fa-map-marker-alt"></i></a>
+                <!-- Enlaces rápidos -->
+                <div class="space-y-4">
+                    <h4 class="text-lg font-semibold text-blue-800 border-b-2 border-yellow-500 pb-2">Enlaces Rápidos</h4>
+                    <ul class="space-y-2">
+                        <li><a href="/products" class="text-gray-700 hover:text-yellow-600 transition-colors text-sm">Todos los Productos</a></li>
+                        <li><a href="/products?category=3" class="text-gray-700 hover:text-yellow-600 transition-colors text-sm">Carretes Spinning</a></li>
+                        <li><a href="/products?category=4" class="text-gray-700 hover:text-yellow-600 transition-colors text-sm">Carretes Baitcast</a></li>
+                        <li><a href="/products?category=5" class="text-gray-700 hover:text-yellow-600 transition-colors text-sm">Señuelos</a></li>
+                        <li><a href="/contact" class="text-gray-700 hover:text-yellow-600 transition-colors text-sm">Contacto</a></li>
+                    </ul>
+                </div>
+
+                <!-- Información de contacto -->
+                <div class="space-y-4">
+                    <h4 class="text-lg font-semibold text-blue-800 border-b-2 border-yellow-500 pb-2">Contacto</h4>
+                    <div class="space-y-3">
+                        <div class="flex items-center space-x-3">
+                            <i class="fas fa-map-marker-alt text-yellow-600"></i>
+                            <span class="text-gray-700 text-sm">Zona Sur, Costa Rica</span>
+                        </div>
+                        <div class="flex items-center space-x-3">
+                            <i class="fas fa-phone text-yellow-600"></i>
+                            <a href="tel:60283248" class="text-gray-700 hover:text-yellow-600 transition-colors text-sm">6028-3248</a>
+                        </div>
+                        <div class="flex items-center space-x-3">
+                            <i class="fab fa-whatsapp text-yellow-600"></i>
+                            <a href="https://wa.me/60283248" target="_blank" class="text-gray-700 hover:text-yellow-600 transition-colors text-sm">WhatsApp</a>
+                        </div>
+                        <div class="flex items-center space-x-3">
+                            <i class="fas fa-clock text-yellow-600"></i>
+                            <span class="text-gray-700 text-sm">Lun-Vie: 8:00-18:00</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Seguridad y confianza -->
+                <div class="space-y-4">
+                    <h4 class="text-lg font-semibold text-blue-800 border-b-2 border-yellow-500 pb-2">Seguridad</h4>
+                    <div class="space-y-3">
+                        <div class="flex items-center space-x-2">
+                            <i class="fas fa-shield-alt text-green-600"></i>
+                            <span class="text-gray-700 text-sm">Pagos Seguros</span>
+                        </div>
+                        <div class="flex items-center space-x-2">
+                            <i class="fas fa-truck text-blue-600"></i>
+                            <span class="text-gray-700 text-sm">Envío Nacional</span>
+                        </div>
+                        <div class="flex items-center space-x-2">
+                            <i class="fas fa-undo text-purple-600"></i>
+                            <span class="text-gray-700 text-sm">Garantía de Productos</span>
+                        </div>
+                        <div class="flex items-center space-x-2">
+                            <i class="fas fa-headset text-orange-600"></i>
+                            <span class="text-gray-700 text-sm">Soporte 24/7</span>
+                        </div>
+                    </div>
                 </div>
             </div>
+        </div>
 
-            <!-- Decoración marina minimalista -->
-            <div class="relative h-1 w-full mt-4">
-                <div class="absolute inset-0 bg-blue-200 opacity-50">
-                    <svg class="w-full h-full" preserveAspectRatio="none" viewBox="0 0 1200 6" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <path d="M0 3C300 3 300 1 600 1C900 1 900 5 1200 5" stroke="currentColor" stroke-width="2" pathLength="1"/>
-                    </svg>
+        <!-- Sección de métodos de pago y certificaciones -->
+        <div class="bg-white border-t-2 border-blue-200">
+            <div class="max-w-7xl mx-auto px-4 py-6">
+                <div class="flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0">
+                    
+                    <!-- Métodos de pago -->
+                    <div class="flex items-center space-x-4">
+                        <span class="text-gray-700 text-sm font-medium">Métodos de Pago:</span>
+                        <div class="flex space-x-2">
+                            <div class="bg-white rounded px-2 py-1 border border-gray-200">
+                                <i class="fab fa-cc-visa text-blue-600 text-lg"></i>
+                            </div>
+                            <div class="bg-white rounded px-2 py-1 border border-gray-200">
+                                <i class="fab fa-cc-mastercard text-red-600 text-lg"></i>
+                            </div>
+                            <div class="bg-white rounded px-2 py-1 border border-gray-200">
+                                <i class="fab fa-cc-paypal text-blue-500 text-lg"></i>
+                            </div>
+                            <div class="bg-white rounded px-2 py-1 text-sm font-bold text-gray-700 border border-gray-200">
+                                SINPE
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Certificaciones de seguridad -->
+                    <div class="flex items-center space-x-4">
+                        <div class="flex items-center space-x-2">
+                            <i class="fas fa-lock text-green-600"></i>
+                            <span class="text-gray-700 text-sm">Sitio Seguro SSL</span>
+                        </div>
+                    </div>
                 </div>
             </div>
+        </div>
 
-            <!-- Créditos del desarrollador -->
-            <div class="text-center text-lg text-gray-500 mt-10 mb-5">
-                Desarrollado por <a href="https://wilberth.com" class="text-blue-500 hover:text-blue-700 transition-colors" target="_blank">Wilberth.com</a>
+        <!-- Copyright y enlaces legales -->
+        <div class="bg-blue-50 border-t-2 border-blue-200">
+            <div class="max-w-7xl mx-auto px-4 py-4">
+                <div class="flex flex-col md:flex-row justify-between items-center space-y-2 md:space-y-0">
+                    <div class="text-gray-600 text-sm">
+                        © {{ date('Y') }} Osa Fishing Pro CR. Todos los derechos reservados.
+                    </div>
+                    <div class="flex space-x-6 text-sm">
+                        <a href="/privacy" class="text-gray-600 hover:text-yellow-600 transition-colors">Política de Privacidad</a>
+                        <a href="/terms" class="text-gray-600 hover:text-yellow-600 transition-colors">Términos y Condiciones</a>
+                        <a href="/shipping" class="text-gray-600 hover:text-yellow-600 transition-colors">Política de Envíos</a>
+                        <a href="/returns" class="text-gray-600 hover:text-yellow-600 transition-colors">Devoluciones</a>
+                    </div>
+                    <div class="text-gray-600 text-sm">
+                        Desarrollado con ❤️ por <a href="#" class="text-yellow-600 hover:text-yellow-700">Tu Desarrollador</a>
+                    </div>
+                </div>
             </div>
         </div>
     </footer>
