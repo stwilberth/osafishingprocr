@@ -37,23 +37,23 @@
         <!-- Bienvenido -->
         <div class="w-5/6 mx-auto">
             <div class="bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4">
-                <h1 class="text-2xl font-bold mb-4 text-red-800">¡Bienvenido a Osa Fishing Pro CR!</h1>
-                <h2 class="text-xl font-semibold mb-3 text-gray-800">Tu tienda especializada en equipos para pesca deportiva
+                <h1 class="text-2xl font-bold mb-4 text-primary-800">¡Bienvenido a Osa Fishing Pro CR!</h1>
+                <h2 class="text-xl font-semibold mb-3 text-primary-700">Tu tienda especializada en equipos para pesca deportiva
                     y de consumo en la zona sur de Costa Rica</h2>
-                <p class="text-gray-700 text-base">
+                <p class="text-primary-600 text-base">
                     Somos la tienda en línea preferida por pescadores de la Península de Osa y alrededores. Aquí encontrarás
                     equipos de calidad seleccionados especialmente para la pesca en ríos y mar de nuestra región, ideales
                     tanto para quienes disfrutan la pesca como pasatiempo como para quienes aprovechan su captura para
                     consumo propio.
                 </p>
-                <p class="text-gray-700 text-base mt-4">
+                <p class="text-primary-600 text-base mt-4">
                     Nuestros productos están seleccionados considerando las especies locales y las condiciones específicas
                     de pesca en la zona sur de Costa Rica.
                 </p>
-                <p class="text-gray-700 text-base mt-4">
+                <p class="text-primary-600 text-base mt-4">
                     Si tienes alguna duda, puedes contactarnos por medio de nuestro <a href="https://wa.me/60283248"
                         target="_blank" class="text-green-500">chat de WhatsApp</a> o llamarnos al
-                    teléfono <a href="tel:60283248" class="text-blue-500">6028-3248</a>.
+                    teléfono <a href="tel:60283248" class="text-primary-500">6028-3248</a>.
                 </p>
             </div>
         </div>
@@ -61,11 +61,11 @@
 
 
         <!-- Categorías más populares -->
-        <section class="py-16 bg-gradient-to-br from-slate-50 via-blue-50 to-indigo-50">
+        <section class="py-16 bg-gradient-to-br from-primary-50 via-primary-100 to-primary-200">
             <div class="max-w-7xl mx-auto px-4">
                 <div class="text-center mb-12">
-                    <h2 class="text-4xl font-bold text-slate-800 mb-4">Categorías Destacadas</h2>
-                    <p class="text-lg text-slate-600 max-w-2xl mx-auto">Descubre nuestras categorías más populares con
+                    <h2 class="text-4xl font-bold text-primary-800 mb-4">Categorías Destacadas</h2>
+                    <p class="text-lg text-primary-600 max-w-2xl mx-auto">Descubre nuestras categorías más populares con
                         equipos seleccionados especialmente para la pesca en Costa Rica</p>
                 </div>
 
@@ -191,51 +191,49 @@
                 <!-- Call to Action adicional -->
                 <div class="text-center mt-12">
                     <a href="/products"
-                        class="inline-flex items-center bg-gradient-to-r from-slate-700 via-slate-800 to-slate-900 hover:from-slate-800 hover:to-slate-900 text-white font-bold py-5 px-10 rounded-full transition-all duration-500 transform hover:scale-105 shadow-2xl hover:shadow-3xl border border-slate-600">
-                        <i class="fas fa-shopping-bag mr-3 text-amber-400"></i>
+                        class="inline-flex items-center bg-gradient-to-r from-primary-700 via-primary-800 to-primary-900 hover:from-primary-800 hover:to-primary-900 text-secondary-500 font-bold py-5 px-10 rounded-full transition-all duration-500 transform hover:scale-105 shadow-2xl hover:shadow-3xl border border-primary-600">
+                        <i class="fas fa-shopping-bag mr-3 text-primary-200"></i>
                         Ver Todas las Categorías
-                        <i class="fas fa-chevron-right ml-3 text-amber-400"></i>
+                        <i class="fas fa-chevron-right ml-3 text-primary-200"></i>
                     </a>
                 </div>
             </div>
         </section>
 
 
-        <!-- PRODUCTOS DESTACADOS -->
-        <section class="bg-white py-12 w-full">
-            <h2 class="text-3xl font-bold text-blue-900 text-center mb-8">Productos Destacados</h2>
-            <div class="w-full px-2">
-                <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-6">
-                    @foreach ($featuredProducts as $product)
-                        <div
-                            class="bg-white rounded-lg shadow-md hover:shadow-lg transition-all duration-300 transform hover:-translate-y-1 p-4 flex flex-col items-center">
-                            @php
-                                $mainImage = $product->images->first();
-                            @endphp
-                            <img src="{{ $mainImage ? asset('storage/' . $mainImage->path) : asset('images/osa_transparent_circle.png') }}"
-                                alt="{{ $product->name }}"
-                                class="object-cover rounded-lg mb-3 w-full">
+<!-- PRODUCTOS DESTACADOS -->
+<div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-6">
+    @foreach ($featuredProducts as $product)
+        <div class="w-full bg-white rounded-lg shadow-md hover:shadow-lg transition-all duration-300 transform hover:-translate-y-1 p-4 flex flex-col items-center">
+            @php
+                $mainImage = $product->images->first();
+            @endphp
+            <img 
+                src="{{ $mainImage ? asset('storage/' . $mainImage->path) : asset('images/osa_transparent_circle.png') }}" 
+                alt="{{ $product->name }}" 
+                class="w-full h-40 object-cover rounded-lg mb-3" />
 
-                            <h3 class="text-sm font-semibold text-gray-800 mb-1 text-center">{{ $product->name }}</h3>
+            <h3 class="text-sm font-semibold text-gray-800 mb-1 text-center">{{ $product->name }}</h3>
 
-                            <span
-                                class="text-lg text-blue-600 font-bold mb-3">₡{{ number_format($product->price, 0, ',', '.') }}</span>
+            <span class="text-lg text-primary-600 font-bold mb-3">
+                ₡{{ number_format($product->price, 0, ',', '.') }}
+            </span>
 
-                            <a href="{{ route('products.show', $product->slug) }}"
-                                class="w-full bg-blue-600 hover:bg-blue-700 text-white text-xs font-semibold py-2 px-3 rounded-md transition-colors text-center">
-                                Ver Producto
-                            </a>
-                        </div>
-                    @endforeach
-                </div>
-            </div>
-        </section>
+            <a href="{{ route('products.show', $product->slug) }}"
+               class="w-full bg-primary-600 hover:bg-primary-700 text-secondary-500 text-xs font-semibold py-2 px-3 rounded-md transition-colors text-center">
+               Ver Producto
+            </a>
+        </div>
+    @endforeach
+</div>
+
+
 
 
         <!-- sobre nosotros -->
         <div class="w-5/6 mx-auto pt-10 pb-4">
-            <h1 class="text-2xl font-bold mb-4 text-center">Sobre nosotros</h1>
-            <p class="text-gray-500 text-md text-center">Somos una empresa dedicada a la venta de productos de pesca de
+            <h1 class="text-2xl font-bold mb-4 text-center text-primary-800">Sobre nosotros</h1>
+            <p class="text-primary-500 text-md text-center">Somos una empresa dedicada a la venta de productos de pesca de
                 alta calidad. Nos enfocamos en ofrecer productos de la mejor calidad para que puedas disfrutar de la pesca
                 al máximo.</p>
         </div>

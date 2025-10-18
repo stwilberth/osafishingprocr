@@ -38,9 +38,9 @@
     @yield('styles')
 
     <!-- production -->
-    <link rel="preload" as="style" href="/build/assets/app-DGhkTmTU.css" />
+    <link rel="preload" as="style" href="/build/assets/app-Bvo_Z76y.css" />
     <link rel="modulepreload" href="/build/assets/app-aHOSkUm3.js" />
-    <link rel="stylesheet" href="/build/assets/app-DGhkTmTU.css" />
+    <link rel="stylesheet" href="/build/assets/app-Bvo_Z76y.css" />
     <script type="module" src="/build/assets/app-aHOSkUm3.js"></script>
     <!-- development -->
     {{-- @vite(['resources/css/app.css', 'resources/js/app.js']) --}}
@@ -71,12 +71,12 @@
 </head>
 
 <body class="font-sans antialiased">
-    <div class="min-h-screen bg-gray-100">
+<div class="min-h-screen bg-secondary-50">
         @include('layouts.navigation')
 
         <!-- Page Heading -->
         @isset($header)
-            <header class="bg-white shadow">
+            <header class="bg-secondary-500 shadow">
                 <div class="max-w-7xl mx-auto py-6 px-4 sm:px-6 lg:px-8">
                     {{ $header }}
                 </div>
@@ -101,7 +101,7 @@
         target="_blank">
         <i class="fab fa-whatsapp"></i>
     </a>
-    <footer class="bg-gray-800 text-gray-800 border-t-4 border-blue-300">
+    <footer class="bg-primary-800 text-secondary-500 border-t-4 border-primary-400">
         <!-- Sección principal del footer -->
         <div class="max-w-7xl mx-auto px-4 py-12">
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
@@ -111,12 +111,12 @@
                     <div class="flex items-center space-x-3">
                         <img src="{{ asset('images/osa_transparent_circle.png') }}" alt="Osa Fishing Pro CR" class="w-12 h-12">
                         <div>
-                            <h3 class="text-xl font-bold text-blue-800">Osa Fishing Pro CR</h3>
-                            <p class="text-sm text-gray-600">Tu tienda de confianza para equipos de pesca</p>
+                            <h3 class="text-xl font-bold text-primary-200">Osa Fishing Pro CR</h3>
+                            <p class="text-sm text-secondary-300">Tu tienda de confianza para equipos de pesca</p>
                         </div>
                     </div>
-                    <p class="text-gray-700 text-sm leading-relaxed">
-                        Especialistas en equipos de pesca deportiva y de consumo para la zona sur de Costa Rica. 
+                    <p class="text-secondary-300 text-sm leading-relaxed">
+                        Especialistas en equipos de pesca deportiva y de consumo para la zona sur de Costa Rica.
                         Productos de calidad seleccionados para pescadores locales.
                     </p>
                     <div class="flex space-x-4">
@@ -137,58 +137,58 @@
 
                 <!-- Enlaces rápidos -->
                 <div class="space-y-4">
-                    <h4 class="text-lg font-semibold text-blue-800 border-b-2 border-yellow-500 pb-2">Enlaces Rápidos</h4>
+                    <h4 class="text-lg font-semibold text-primary-200 border-b-2 border-primary-300 pb-2">Enlaces Rápidos</h4>
                     <ul class="space-y-2">
-                        <li><a href="/products" class="text-gray-700 hover:text-yellow-600 transition-colors text-sm">Todos los Productos</a></li>
-                        <li><a href="/products?category=3" class="text-gray-700 hover:text-yellow-600 transition-colors text-sm">Carretes Spinning</a></li>
-                        <li><a href="/products?category=4" class="text-gray-700 hover:text-yellow-600 transition-colors text-sm">Carretes Baitcast</a></li>
-                        <li><a href="/products?category=5" class="text-gray-700 hover:text-yellow-600 transition-colors text-sm">Señuelos</a></li>
-                        <li><a href="/contact" class="text-gray-700 hover:text-yellow-600 transition-colors text-sm">Contacto</a></li>
+                        <li><a href="/products" class="text-secondary-300 hover:text-primary-200 transition-colors text-sm">Todos los Productos</a></li>
+                        <li><a href="/products?category=3" class="text-secondary-300 hover:text-primary-200 transition-colors text-sm">Carretes Spinning</a></li>
+                        <li><a href="/products?category=4" class="text-secondary-300 hover:text-primary-200 transition-colors text-sm">Carretes Baitcast</a></li>
+                        <li><a href="/products?category=5" class="text-secondary-300 hover:text-primary-200 transition-colors text-sm">Señuelos</a></li>
+                        <li><a href="/contact" class="text-secondary-300 hover:text-primary-200 transition-colors text-sm">Contacto</a></li>
                     </ul>
                 </div>
 
                 <!-- Información de contacto -->
                 <div class="space-y-4">
-                    <h4 class="text-lg font-semibold text-blue-800 border-b-2 border-yellow-500 pb-2">Contacto</h4>
+                    <h4 class="text-lg font-semibold text-primary-200 border-b-2 border-primary-300 pb-2">Contacto</h4>
                     <div class="space-y-3">
                         <div class="flex items-center space-x-3">
-                            <i class="fas fa-map-marker-alt text-yellow-600"></i>
-                            <span class="text-gray-700 text-sm">Zona Sur, Costa Rica</span>
+                            <i class="fas fa-map-marker-alt text-primary-300"></i>
+                            <span class="text-secondary-300 text-sm">Zona Sur, Costa Rica</span>
                         </div>
                         <div class="flex items-center space-x-3">
-                            <i class="fas fa-phone text-yellow-600"></i>
-                            <a href="tel:60283248" class="text-gray-700 hover:text-yellow-600 transition-colors text-sm">6028-3248</a>
+                            <i class="fas fa-phone text-primary-300"></i>
+                            <a href="tel:60283248" class="text-secondary-300 hover:text-primary-200 transition-colors text-sm">6028-3248</a>
                         </div>
                         <div class="flex items-center space-x-3">
-                            <i class="fab fa-whatsapp text-yellow-600"></i>
-                            <a href="https://wa.me/60283248" target="_blank" class="text-gray-700 hover:text-yellow-600 transition-colors text-sm">WhatsApp</a>
+                            <i class="fab fa-whatsapp text-primary-300"></i>
+                            <a href="https://wa.me/60283248" target="_blank" class="text-secondary-300 hover:text-primary-200 transition-colors text-sm">WhatsApp</a>
                         </div>
                         <div class="flex items-center space-x-3">
-                            <i class="fas fa-clock text-yellow-600"></i>
-                            <span class="text-gray-700 text-sm">Lun-Vie: 8:00-18:00</span>
+                            <i class="fas fa-clock text-primary-300"></i>
+                            <span class="text-secondary-300 text-sm">Lun-Vie: 8:00-18:00</span>
                         </div>
                     </div>
                 </div>
 
                 <!-- Seguridad y confianza -->
                 <div class="space-y-4">
-                    <h4 class="text-lg font-semibold text-blue-800 border-b-2 border-yellow-500 pb-2">Seguridad</h4>
+                    <h4 class="text-lg font-semibold text-primary-200 border-b-2 border-primary-300 pb-2">Seguridad</h4>
                     <div class="space-y-3">
                         <div class="flex items-center space-x-2">
-                            <i class="fas fa-shield-alt text-green-600"></i>
-                            <span class="text-gray-700 text-sm">Pagos Seguros</span>
+                            <i class="fas fa-shield-alt text-green-400"></i>
+                            <span class="text-secondary-300 text-sm">Pagos Seguros</span>
                         </div>
                         <div class="flex items-center space-x-2">
-                            <i class="fas fa-truck text-blue-600"></i>
-                            <span class="text-gray-700 text-sm">Envío Nacional</span>
+                            <i class="fas fa-truck text-primary-300"></i>
+                            <span class="text-secondary-300 text-sm">Envío Nacional</span>
                         </div>
                         <div class="flex items-center space-x-2">
-                            <i class="fas fa-undo text-purple-600"></i>
-                            <span class="text-gray-700 text-sm">Garantía de Productos</span>
+                            <i class="fas fa-undo text-purple-400"></i>
+                            <span class="text-secondary-300 text-sm">Garantía de Productos</span>
                         </div>
                         <div class="flex items-center space-x-2">
-                            <i class="fas fa-headset text-orange-600"></i>
-                            <span class="text-gray-700 text-sm">Soporte 24/7</span>
+                            <i class="fas fa-headset text-orange-400"></i>
+                            <span class="text-secondary-300 text-sm">Soporte 24/7</span>
                         </div>
                     </div>
                 </div>
@@ -196,24 +196,24 @@
         </div>
 
         <!-- Sección de métodos de pago y certificaciones -->
-        <div class="bg-white border-t-2 border-blue-200">
+        <div class="bg-secondary-500 border-t-2 border-primary-300">
             <div class="max-w-7xl mx-auto px-4 py-6">
                 <div class="flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0">
-                    
+
                     <!-- Métodos de pago -->
                     <div class="flex items-center space-x-4">
-                        <span class="text-gray-700 text-sm font-medium">Métodos de Pago:</span>
+                        <span class="text-primary-800 text-sm font-medium">Métodos de Pago:</span>
                         <div class="flex space-x-2">
-                            <div class="bg-white rounded px-2 py-1 border border-gray-200">
+                            <div class="bg-secondary-500 rounded px-2 py-1 border border-primary-300">
                                 <i class="fab fa-cc-visa text-blue-600 text-lg"></i>
                             </div>
-                            <div class="bg-white rounded px-2 py-1 border border-gray-200">
+                            <div class="bg-secondary-500 rounded px-2 py-1 border border-primary-300">
                                 <i class="fab fa-cc-mastercard text-red-600 text-lg"></i>
                             </div>
-                            <div class="bg-white rounded px-2 py-1 border border-gray-200">
+                            <div class="bg-secondary-500 rounded px-2 py-1 border border-primary-300">
                                 <i class="fab fa-cc-paypal text-blue-500 text-lg"></i>
                             </div>
-                            <div class="bg-white rounded px-2 py-1 text-sm font-bold text-gray-700 border border-gray-200">
+                            <div class="bg-secondary-500 rounded px-2 py-1 text-sm font-bold text-primary-800 border border-primary-300">
                                 SINPE
                             </div>
                         </div>
@@ -223,7 +223,7 @@
                     <div class="flex items-center space-x-4">
                         <div class="flex items-center space-x-2">
                             <i class="fas fa-lock text-green-600"></i>
-                            <span class="text-gray-700 text-sm">Sitio Seguro SSL</span>
+                            <span class="text-primary-800 text-sm">Sitio Seguro SSL</span>
                         </div>
                     </div>
                 </div>
@@ -231,20 +231,20 @@
         </div>
 
         <!-- Copyright y enlaces legales -->
-        <div class="bg-blue-50 border-t-2 border-blue-200">
+        <div class="bg-primary-50 border-t-2 border-primary-200">
             <div class="max-w-7xl mx-auto px-4 py-4">
                 <div class="flex flex-col md:flex-row justify-between items-center space-y-2 md:space-y-0">
-                    <div class="text-gray-600 text-sm">
+                    <div class="text-primary-600 text-sm">
                         © {{ date('Y') }} Osa Fishing Pro CR. Todos los derechos reservados.
                     </div>
                     <div class="flex space-x-6 text-sm">
-                        <a href="/privacy" class="text-gray-600 hover:text-yellow-600 transition-colors">Política de Privacidad</a>
-                        <a href="/terms" class="text-gray-600 hover:text-yellow-600 transition-colors">Términos y Condiciones</a>
-                        <a href="/shipping" class="text-gray-600 hover:text-yellow-600 transition-colors">Política de Envíos</a>
-                        <a href="/returns" class="text-gray-600 hover:text-yellow-600 transition-colors">Devoluciones</a>
+                        <a href="/privacy" class="text-primary-600 hover:text-primary-700 transition-colors">Política de Privacidad</a>
+                        <a href="/terms" class="text-primary-600 hover:text-primary-700 transition-colors">Términos y Condiciones</a>
+                        <a href="/shipping" class="text-primary-600 hover:text-primary-700 transition-colors">Política de Envíos</a>
+                        <a href="/returns" class="text-primary-600 hover:text-primary-700 transition-colors">Devoluciones</a>
                     </div>
-                    <div class="text-gray-600 text-sm">
-                        Desarrollado con ❤️ por <a href="#" class="text-yellow-600 hover:text-yellow-700">Tu Desarrollador</a>
+                    <div class="text-primary-600 text-sm">
+                        Desarrollado con ❤️ por <a href="#" class="text-primary-700 hover:text-primary-800">Tu Desarrollador</a>
                     </div>
                 </div>
             </div>
