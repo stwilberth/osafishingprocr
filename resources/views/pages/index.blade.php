@@ -103,7 +103,7 @@
                             </div>
                             <a href="/products?category=3&brand="
                                 class="inline-block bg-blue-600 hover:bg-blue-700 text-white font-semibold py-4 px-8 rounded-full transition-all duration-500 transform hover:scale-105 shadow-lg">
-                                Ver Productos
+                                Ver Carretes Spinning
                                 <i class="fas fa-arrow-right ml-2"></i>
                             </a>
                         </div>
@@ -142,7 +142,7 @@
                             </div>
                             <a href="/products?category=4&brand="
                                 class="inline-block bg-green-600 hover:bg-green-700 text-white font-semibold py-4 px-8 rounded-full transition-all duration-500 transform hover:scale-105 shadow-lg">
-                                Ver Productos
+                                Ver Carretes Baitcast
                                 <i class="fas fa-arrow-right ml-2"></i>
                             </a>
                         </div>
@@ -181,7 +181,7 @@
                             </div>
                             <a href="/products?category=5&brand="
                                 class="inline-block bg-purple-600 hover:bg-purple-700 text-white font-semibold py-4 px-8 rounded-full transition-all duration-500 transform hover:scale-105 shadow-lg">
-                                Ver Productos
+                                Ver Señuelos
                                 <i class="fas fa-arrow-right ml-2"></i>
                             </a>
                         </div>
