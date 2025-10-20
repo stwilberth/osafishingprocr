@@ -67,10 +67,10 @@
                 @else
                     <!-- Login and Register Links for guests -->
                     <x-nav-link :href="route('login')" :active="request()->routeIs('login')">
-                        {{ __('Log in') }}
+                        Iniciar Sesión
                     </x-nav-link>
                     <x-nav-link :href="route('register')" :active="request()->routeIs('register')">
-                        {{ __('Register') }}
+                        Registrarse
                     </x-nav-link>
                 @endif
             </div>
@@ -97,20 +97,20 @@
             <!-- dashboard -->
             @if (Auth::check())
                 <x-responsive-nav-link :href="route('dashboard')" :active="request()->routeIs('dashboard')">
-                    {{ __('Dashboard') }}
+                    Dashboard
                 </x-responsive-nav-link>
             @endif
             <!-- products -->
             <x-responsive-nav-link :href="route('products.index')" :active="request()->routeIs('products.index')">
-                {{ __('Products') }}
+                Productos
             </x-responsive-nav-link>
             <!-- about -->
             <x-responsive-nav-link :href="route('pages.about')" :active="request()->routeIs('pages.about')">
-                {{ __('About') }}
+                Nosotros
             </x-responsive-nav-link>
             <!-- contact -->
             <x-responsive-nav-link :href="route('contacts.create')" :active="request()->routeIs('contacts.create')">
-                {{ __('Contact') }}
+                Contacto
             </x-responsive-nav-link>
         </div>
 
@@ -130,16 +130,16 @@
                         <x-responsive-nav-link :href="route('logout')"
                             onclick="event.preventDefault();
                                         this.closest('form').submit();">
-                            {{ __('Log Out') }}
+                            Cerrar Sesión
                         </x-responsive-nav-link>
                     </form>
                 @else
                     <!-- Login and Register Links for guests on mobile -->
                     <x-responsive-nav-link :href="route('login')">
-                        {{ __('Log in') }}
+                        Iniciar Sesión
                     </x-responsive-nav-link>
                     <x-responsive-nav-link :href="route('register')">
-                        {{ __('Register') }}
+                        Registrarse
                     </x-responsive-nav-link>
                 @endif
             </div>

@@ -109,9 +109,9 @@
                 <!-- Información de la empresa -->
                 <div class="space-y-4">
                     <div class="flex items-center space-x-3">
-                        <img src="{{ asset('images/osa_transparent_circle.png') }}" alt="Osa Fishing Pro CR" class="w-12 h-12">
+                        <img src="{{ asset('images/logo_blanco.png') }}" alt="Osa Fishing Pro" class="w-12 h-12">
                         <div>
-                            <h3 class="text-xl font-bold text-primary-200">Osa Fishing Pro CR</h3>
+                            <h3 class="text-xl font-bold text-primary-200">Osa Fishing Pro</h3>
                             <p class="text-sm text-secondary-300">Tu tienda de confianza para equipos de pesca</p>
                         </div>
                     </div>
@@ -186,10 +186,6 @@
                             <i class="fas fa-undo text-purple-400"></i>
                             <span class="text-secondary-300 text-sm">Garantía de Productos</span>
                         </div>
-                        <div class="flex items-center space-x-2">
-                            <i class="fas fa-headset text-orange-400"></i>
-                            <span class="text-secondary-300 text-sm">Soporte 24/7</span>
-                        </div>
                     </div>
                 </div>
             </div>
@@ -244,7 +240,7 @@
                         <a href="/returns" class="text-primary-600 hover:text-primary-700 transition-colors">Devoluciones</a>
                     </div>
                     <div class="text-primary-600 text-sm">
-                        Desarrollado con ❤️ por <a href="#" class="text-primary-700 hover:text-primary-800">Tu Desarrollador</a>
+                        Desarrollado con ❤️ por <a href="https://wilberth.com" class="text-primary-700 hover:text-primary-800">Wilberth.com</a>
                     </div>
                 </div>
             </div>
