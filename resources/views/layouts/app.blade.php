@@ -38,10 +38,7 @@
     @yield('styles')
 
     <!-- production -->
-    <link rel="preload" as="style" href="/build/assets/app-Bvo_Z76y.css" />
-    <link rel="modulepreload" href="/build/assets/app-aHOSkUm3.js" />
-    <link rel="stylesheet" href="/build/assets/app-Bvo_Z76y.css" />
-    <script type="module" src="/build/assets/app-aHOSkUm3.js"></script>
+    @vite(['resources/css/app.css', 'resources/js/app.js'])
     <!-- development -->
     {{-- @vite(['resources/css/app.css', 'resources/js/app.js']) --}}
 
