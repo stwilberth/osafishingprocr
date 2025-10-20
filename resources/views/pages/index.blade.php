@@ -193,7 +193,7 @@
                     <a href="/products"
                         class="inline-flex items-center bg-gradient-to-r from-primary-700 via-primary-800 to-primary-900 hover:from-primary-800 hover:to-primary-900 text-secondary-500 font-bold py-5 px-10 rounded-full transition-all duration-500 transform hover:scale-105 shadow-2xl hover:shadow-3xl border border-primary-600">
                         <i class="fas fa-shopping-bag mr-3 text-primary-200"></i>
-                        Ver Todas las Categorías
+                        Ver Todos los Productos
                         <i class="fas fa-chevron-right ml-3 text-primary-200"></i>
                     </a>
                 </div>
