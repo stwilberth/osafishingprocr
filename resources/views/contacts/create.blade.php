@@ -1,4 +1,9 @@
 @extends('layouts.app')
+@section('meta')
+    <title>Contacto - Osa Fishing Pro CR</title>
+    <meta name="description" content="Contacta con Osa Fishing Pro - Tienda de pesca en Costa Rica. Información de contacto, WhatsApp, teléfono, email y ubicación en la zona sur.">
+@endsection
+
 
 @section('content')
     <!-- contact form -->
