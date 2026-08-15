@@ -10,7 +10,7 @@
                     <div class="aspect-w-1 aspect-h-1 mb-3">
                         @if ($product->images->count() > 0)
                             <a href="{{ route('products.show', $product) }}">
-                                <img src="{{ asset('storage/' . $product->images->first()->path) }}"
+                                <img src="{{ producto_img($product->images->first()->path) }}"
                                     alt="{{ $product->images->first()->name }}"
                                     class="w-full h-32 md:h-48 object-contain rounded-lg">
                             </a>

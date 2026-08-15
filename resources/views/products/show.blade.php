@@ -2,7 +2,7 @@
 
 @php
     if ($product->images->count() > 0) {
-        $image = asset('storage/products/thumb_' . $product->images->first()->url);
+        $image = producto_img('thumb_' . $product->images->first()->url);
     } else {
         $image = asset('images/osa_transparent_circle.png');
     }

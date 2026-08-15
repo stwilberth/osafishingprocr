@@ -157,11 +157,11 @@ class ProductImageController extends Controller
                     $constraint->upsize();
                 });
 
-            $img_thumb_path = 'products/thumb_'.$unique_name;
-            $img_crop_path = 'products/'.$unique_name;
+            $img_thumb_path = 'osafishingprocr/products/thumb_'.$unique_name;
+            $img_crop_path = 'osafishingprocr/products/'.$unique_name;
 
-            Storage::disk('public')->put($img_thumb_path, $img_thumb->encode()) or throw new \Exception('Error storing thumbnail');
-            Storage::disk('public')->put($img_crop_path, $img_crop->encode()) or throw new \Exception('Error storing cropped image');
+            Storage::disk('r2')->put($img_thumb_path, $img_thumb->encode(), 'public') or throw new \Exception('Error storing thumbnail');
+            Storage::disk('r2')->put($img_crop_path, $img_crop->encode(), 'public') or throw new \Exception('Error storing cropped image');
 
             //si ya hay imagenes se usa el aspect ratio de la primera
             if ($Product->images->count() > 0) {
@@ -187,8 +187,8 @@ class ProductImageController extends Controller
     {
         try {
             $image->delete();
-            Storage::disk('public')->delete('products/'.$image->url);
-            Storage::disk('public')->delete('products/thumb_'.$image->url);
+            Storage::disk('r2')->delete('osafishingprocr/products/'.$image->url);
+            Storage::disk('r2')->delete('osafishingprocr/products/thumb_'.$image->url);
 
             return redirect()->back()->with('status', 'OK');
 

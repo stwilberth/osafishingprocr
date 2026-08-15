@@ -6,7 +6,7 @@
   "name": "{{ $product->name }}",
   "image": [
     @if ($product->images->count() > 0)
-      "{{ asset('storage/products/' . $product->images->first()->url) }}"
+      "{{ producto_img($product->images->first()->url) }}"
     @else
       "{{ asset('images/no_image.jpg') }}"
     @endif

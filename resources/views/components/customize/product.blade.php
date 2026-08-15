@@ -3,7 +3,7 @@
     <div class="bg-white p-3 rounded-lg shadow-lg">
         {{-- {{ asset('storage/' . $image->path) }} --}}
         @if ($product->images->count() > 0)
-            <img src="{{ asset('storage/' . $product->images->first()->path) }}"
+            <img src="{{ producto_img($product->images->first()->path) }}"
                 alt="{{ $product->images->first()->name }}" class="w-full object-cover mb-4 rounded-lg">
         @else
             <img src="{{ asset('images/osa_transparent_circle.png') }}" alt="Placeholder" class="w-full object-cover mb-4 rounded-lg">

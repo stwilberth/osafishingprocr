@@ -82,7 +82,7 @@
                             <div class="text-center">
                                 <div class="mb-6">
                                     @if ($spinningProduct && $spinningProduct->images->first())
-                                        <img src="{{ asset('storage/' . $spinningProduct->images->first()->path) }}"
+                                        <img src="{{ producto_img($spinningProduct->images->first()->path) }}"
                                             alt="{{ $spinningProduct->name }}"
                                             class="w-28 h-28 object-cover rounded-2xl mx-auto mb-4 border-4 border-blue-200 border-opacity-60 shadow-lg group-hover:scale-110 transition-transform duration-500">
                                     @else
@@ -121,7 +121,7 @@
                             <div class="text-center">
                                 <div class="mb-6">
                                     @if ($baitcastProduct && $baitcastProduct->images->first())
-                                        <img src="{{ asset('storage/' . $baitcastProduct->images->first()->path) }}"
+                                        <img src="{{ producto_img($baitcastProduct->images->first()->path) }}"
                                             alt="{{ $baitcastProduct->name }}"
                                             class="w-28 h-28 object-cover rounded-2xl mx-auto mb-4 border-4 border-green-200 border-opacity-60 shadow-lg group-hover:scale-110 transition-transform duration-500">
                                     @else
@@ -160,7 +160,7 @@
                             <div class="text-center">
                                 <div class="mb-6">
                                     @if ($luresProduct && $luresProduct->images->first())
-                                        <img src="{{ asset('storage/' . $luresProduct->images->first()->path) }}"
+                                        <img src="{{ producto_img($luresProduct->images->first()->path) }}"
                                             alt="{{ $luresProduct->name }}"
                                             class="w-28 h-28 object-cover rounded-2xl mx-auto mb-4 border-4 border-purple-200 border-opacity-60 shadow-lg group-hover:scale-110 transition-transform duration-500">
                                     @else
@@ -209,7 +209,7 @@
                 $mainImage = $product->images->first();
             @endphp
             <img 
-                src="{{ $mainImage ? asset('storage/' . $mainImage->path) : asset('images/osa_transparent_circle.png') }}" 
+                src="{{ $mainImage ? producto_img($mainImage->path) : asset('images/osa_transparent_circle.png') }}" 
                 alt="{{ $product->name }}" 
                 class="w-full h-40 object-cover rounded-lg mb-3" />
 
